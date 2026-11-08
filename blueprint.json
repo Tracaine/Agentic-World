@@ -1,0 +1,4260 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "Agentic World Platform",
+    "slug": "agentic-world-platform",
+    "summary": "Minecraft-first modular runtime for one persistent embodied AI character, with revisable provider and environment seams and no portability proof claim until a second materially different real adapter exists.",
+    "profiles": [
+      "agent-world-systems",
+      "minecraft-ai-npc"
+    ],
+    "reference_products": [
+      {
+        "name": "Minecraft",
+        "role": "First playable environment and authoritative physical proof body, not permanent platform boundary"
+      },
+      {
+        "name": "Project Sid",
+        "role": "Experience reference and question source only; architecture and scale are not inherited"
+      }
+    ]
+  },
+  "revision": 2,
+  "status": "approved",
+  "created_at": "2026-07-17T19:25:35+00:00",
+  "last_updated": "2026-07-17T23:55:00-05:00",
+  "source_of_truth": {
+    "registry_work_graph_limits_and_classification": "blueprint.json",
+    "reference_contracts_until_code_exists": "contracts/platform-contracts.md",
+    "implemented_contracts_after_code_exists": "src contracts and schemas",
+    "decision_rationale": "decisions/accepted-decisions.md",
+    "implementation_status": "10-resume-state.md",
+    "owner_runbook": "12-golden-path-windows.md",
+    "work_execution_details": "work-items/*.md",
+    "generated_views": "generated/*.md; never hand edit"
+  },
+  "current_focus": {
+    "phase": "step-zero",
+    "active_work_item": null,
+    "active_spike": "SPIKE-000",
+    "last_verified_at": "2026-07-17T23:55:00-05:00",
+    "code_revision": null,
+    "next_actions": [
+      "Create an explicitly disposable SPIKE-000 directory or branch outside the production tree.",
+      "Run the clean-Windows preflight and record exact Node, Java, Paper, Mineflayer, pathfinder, and model-adapter evidence.",
+      "Do not begin WRK-001 until every SPIKE-000 progressive embodiment gate has a recorded pass or an explicit fallback decision."
+    ],
+    "resume_notes": "Revision 2 is the approved blueprint patch. No runtime implementation is claimed. Generated views must match blueprint.json and both validators must pass before work begins."
+  },
+  "artifacts": [
+    {
+      "id": "ART-001",
+      "summary": "Canonical registry, work graph, limits, and feature classification",
+      "status": "active",
+      "path": "blueprint.json",
+      "depends_on": []
+    },
+    {
+      "id": "ART-002",
+      "summary": "Project charter, scope, scenarios, and glossary",
+      "status": "accepted",
+      "path": "00-charter.md",
+      "depends_on": [
+        "ART-001"
+      ]
+    },
+    {
+      "id": "ART-003",
+      "summary": "Requirements, invariants, assumptions, questions, and risks",
+      "status": "accepted",
+      "path": "01-requirements.md",
+      "depends_on": [
+        "ART-002"
+      ]
+    },
+    {
+      "id": "ART-004",
+      "summary": "System context, authorities, trust boundaries, and invariants",
+      "status": "accepted",
+      "path": "02-context-and-invariants.md",
+      "depends_on": [
+        "ART-002",
+        "ART-003"
+      ]
+    },
+    {
+      "id": "ART-005",
+      "summary": "Orthogonal state, stable identity, Gate-A persistence, encounter, and recovery model",
+      "status": "accepted",
+      "path": "03-domain-state-data.md",
+      "depends_on": [
+        "ART-003",
+        "ART-004"
+      ]
+    },
+    {
+      "id": "ART-006",
+      "summary": "Components, dependency rules, runtime and deployment topology",
+      "status": "accepted",
+      "path": "04-components-and-topology.md",
+      "depends_on": [
+        "ART-004",
+        "ART-005"
+      ]
+    },
+    {
+      "id": "ART-007",
+      "summary": "Closed v2 contracts, speech ownership, asynchronous behavior, and evidence thresholds",
+      "status": "accepted",
+      "path": "05-interfaces-and-contracts.md",
+      "depends_on": [
+        "ART-005",
+        "ART-006"
+      ]
+    },
+    {
+      "id": "ART-008",
+      "summary": "Corrected lifecycle, conversation, behavior, suspension, restart, and control flows",
+      "status": "accepted",
+      "path": "06-runtime-flows.md",
+      "depends_on": [
+        "ART-006",
+        "ART-007"
+      ]
+    },
+    {
+      "id": "ART-009",
+      "summary": "Gate-A quality, stimulus suppression, security, diagnosis, and operations",
+      "status": "accepted",
+      "path": "07-quality-security-operations.md",
+      "depends_on": [
+        "ART-004",
+        "ART-006",
+        "ART-008"
+      ]
+    },
+    {
+      "id": "ART-010",
+      "summary": "Verification, experience safeguards, retrieval suite, and Gate-A acceptance",
+      "status": "accepted",
+      "path": "08-verification.md",
+      "depends_on": [
+        "ART-003",
+        "ART-008",
+        "ART-009"
+      ]
+    },
+    {
+      "id": "ART-011",
+      "summary": "Step-Zero/Gate-A critical path and deferred work graph",
+      "status": "accepted",
+      "path": "09-delivery-plan.md",
+      "depends_on": [
+        "ART-006",
+        "ART-007",
+        "ART-010"
+      ]
+    },
+    {
+      "id": "ART-012",
+      "summary": "Sole implementation-status and resume authority",
+      "status": "active",
+      "path": "10-resume-state.md",
+      "depends_on": [
+        "ART-001",
+        "ART-011"
+      ]
+    },
+    {
+      "id": "ART-013",
+      "summary": "Architecture decision record template",
+      "status": "active",
+      "path": "decisions/ADR-template.md",
+      "depends_on": [
+        "ART-001"
+      ]
+    },
+    {
+      "id": "ART-014",
+      "summary": "Interface contract template",
+      "status": "active",
+      "path": "contracts/CONTRACT-template.md",
+      "depends_on": [
+        "ART-001"
+      ]
+    },
+    {
+      "id": "ART-015",
+      "summary": "Agent-executable work package template",
+      "status": "active",
+      "path": "work-items/WRK-template.md",
+      "depends_on": [
+        "ART-001"
+      ]
+    },
+    {
+      "id": "ART-016",
+      "summary": "Accepted decisions with revision-2 supersession history",
+      "status": "accepted",
+      "path": "decisions/accepted-decisions.md",
+      "depends_on": [
+        "ART-003",
+        "ART-004",
+        "ART-006"
+      ]
+    },
+    {
+      "id": "ART-017",
+      "summary": "Closed project-owned v2 interface and state contracts",
+      "status": "accepted",
+      "path": "contracts/platform-contracts.md",
+      "depends_on": [
+        "ART-005",
+        "ART-006",
+        "ART-007"
+      ]
+    },
+    {
+      "id": "ART-018",
+      "summary": "Structural and semantic audit report",
+      "status": "accepted",
+      "path": "11-semantic-review.md",
+      "depends_on": [
+        "ART-001",
+        "ART-002",
+        "ART-003",
+        "ART-004",
+        "ART-005",
+        "ART-006",
+        "ART-007",
+        "ART-008",
+        "ART-009",
+        "ART-010",
+        "ART-011",
+        "ART-012"
+      ]
+    },
+    {
+      "id": "ART-019",
+      "summary": "WRK-001 scaffold/contracts/fakes package",
+      "status": "accepted",
+      "path": "work-items/WRK-001.md",
+      "depends_on": [
+        "ART-011",
+        "ART-017"
+      ]
+    },
+    {
+      "id": "ART-020",
+      "summary": "WRK-002 empirical embodiment package",
+      "status": "accepted",
+      "path": "work-items/WRK-002.md",
+      "depends_on": [
+        "ART-019"
+      ]
+    },
+    {
+      "id": "ART-021",
+      "summary": "WRK-003 model-decision/speech/async-behavior package",
+      "status": "accepted",
+      "path": "work-items/WRK-003.md",
+      "depends_on": [
+        "ART-019"
+      ]
+    },
+    {
+      "id": "ART-022",
+      "summary": "WRK-004 minimal SQLite continuity package",
+      "status": "accepted",
+      "path": "work-items/WRK-004.md",
+      "depends_on": [
+        "ART-020",
+        "ART-021"
+      ]
+    },
+    {
+      "id": "ART-023",
+      "summary": "WRK-005 repeated defining-proof package",
+      "status": "accepted",
+      "path": "work-items/WRK-005.md",
+      "depends_on": [
+        "ART-021",
+        "ART-022"
+      ]
+    },
+    {
+      "id": "ART-024",
+      "summary": "WRK-006 versioned experience regression package",
+      "status": "accepted",
+      "path": "work-items/WRK-006.md",
+      "depends_on": [
+        "ART-022",
+        "ART-023"
+      ]
+    },
+    {
+      "id": "ART-025",
+      "summary": "WRK-007 measured memory mitigation package",
+      "status": "accepted",
+      "path": "work-items/WRK-007.md",
+      "depends_on": [
+        "ART-021",
+        "ART-023",
+        "ART-024"
+      ]
+    },
+    {
+      "id": "ART-026",
+      "summary": "WRK-008 operator governance package",
+      "status": "accepted",
+      "path": "work-items/WRK-008.md",
+      "depends_on": [
+        "ART-022",
+        "ART-024",
+        "ART-025"
+      ]
+    },
+    {
+      "id": "ART-027",
+      "summary": "WRK-009 generalized readiness/observability/budget package",
+      "status": "accepted",
+      "path": "work-items/WRK-009.md",
+      "depends_on": [
+        "ART-023",
+        "ART-024",
+        "ART-025",
+        "ART-026"
+      ]
+    },
+    {
+      "id": "ART-028",
+      "summary": "WRK-010 second-character package",
+      "status": "accepted",
+      "path": "work-items/WRK-010.md",
+      "depends_on": [
+        "ART-027"
+      ]
+    },
+    {
+      "id": "ART-029",
+      "summary": "WRK-011 8-10-character scale package",
+      "status": "accepted",
+      "path": "work-items/WRK-011.md",
+      "depends_on": [
+        "ART-028"
+      ]
+    },
+    {
+      "id": "ART-030",
+      "summary": "WRK-012 authoritative inventory/item workflow package",
+      "status": "accepted",
+      "path": "work-items/WRK-012.md",
+      "depends_on": [
+        "ART-027"
+      ]
+    },
+    {
+      "id": "ART-031",
+      "summary": "WRK-013 speculative action-tag/emote package",
+      "status": "deferred",
+      "path": "work-items/WRK-013.md",
+      "depends_on": [
+        "ART-027"
+      ]
+    },
+    {
+      "id": "ART-032",
+      "summary": "SPIKE-000 disposable Step-Zero recipe",
+      "status": "active",
+      "path": "work-items/SPIKE-000.md",
+      "depends_on": [
+        "ART-011"
+      ]
+    },
+    {
+      "id": "ART-033",
+      "summary": "Clean-Windows golden-path owner runbook",
+      "status": "accepted",
+      "path": "12-golden-path-windows.md",
+      "depends_on": [
+        "ART-011",
+        "ART-017"
+      ]
+    },
+    {
+      "id": "ART-034",
+      "summary": "Revision-2 ID disposition and coverage map",
+      "status": "accepted",
+      "path": "13-change-log.md",
+      "depends_on": [
+        "ART-001"
+      ]
+    },
+    {
+      "id": "ART-035",
+      "summary": "Gate-A critical path and four-way feature map",
+      "status": "accepted",
+      "path": "14-gate-a-map.md",
+      "depends_on": [
+        "ART-001",
+        "ART-011"
+      ]
+    },
+    {
+      "id": "ART-036",
+      "summary": "Generated-view renderer",
+      "status": "active",
+      "path": "tools/render_blueprint.py",
+      "depends_on": [
+        "ART-001"
+      ]
+    },
+    {
+      "id": "ART-037",
+      "summary": "Semantic consistency guard",
+      "status": "active",
+      "path": "tools/semantic_guard.py",
+      "depends_on": [
+        "ART-001",
+        "ART-017"
+      ]
+    },
+    {
+      "id": "ART-038",
+      "summary": "Generated registry, limits, feature, and work views",
+      "status": "active",
+      "path": "generated/registry.md",
+      "depends_on": [
+        "ART-036"
+      ]
+    },
+    {
+      "id": "ART-039",
+      "summary": "WRK-014 second real adapter package",
+      "status": "deferred",
+      "path": "work-items/WRK-014.md",
+      "depends_on": [
+        "ART-023"
+      ]
+    },
+    {
+      "id": "ART-040",
+      "summary": "WRK-015 rich social cognition package",
+      "status": "deferred",
+      "path": "work-items/WRK-015.md",
+      "depends_on": [
+        "ART-024",
+        "ART-028"
+      ]
+    },
+    {
+      "id": "ART-041",
+      "summary": "WRK-016 exhaustive recovery/governance package",
+      "status": "deferred",
+      "path": "work-items/WRK-016.md",
+      "depends_on": [
+        "ART-023",
+        "ART-026"
+      ]
+    },
+    {
+      "id": "ART-042",
+      "summary": "Packaged revision validation command record",
+      "status": "active",
+      "path": "generated/validation-report.txt",
+      "depends_on": [
+        "ART-001",
+        "ART-037",
+        "ART-038"
+      ]
+    }
+  ],
+  "registries": {
+    "requirements": [
+      {
+        "id": "REQ-001",
+        "summary": "Keep core policy independent of Minecraft/provider implementations without claiming demonstrated portability",
+        "status": "accepted",
+        "source": "User requested a reusable platform with Minecraft as first body",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003"
+        ],
+        "verified_by": [
+          "VER-001"
+        ],
+        "implemented_by": [
+          "WRK-001"
+        ],
+        "acceptance": "Core imports no Mineflayer/OpenAI/SQLite implementation; fakes prove boundaries, not world portability.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-002",
+        "summary": "Connect one stable named NPC to the empirically selected private Paper world",
+        "status": "accepted",
+        "source": "Smallest valuable vertical slice",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-001"
+        ],
+        "verified_by": [
+          "VER-002"
+        ],
+        "implemented_by": [
+          "WRK-002"
+        ],
+        "acceptance": "The same AgentId completes join, player-detection, disconnect, reconnect, and restart smoke gates using a dated compatibility record.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-003",
+        "summary": "Produce a limited structured agent-scoped nearby perception",
+        "status": "accepted",
+        "source": "User vertical-slice requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-001",
+          "CMP-002"
+        ],
+        "verified_by": [
+          "VER-003"
+        ],
+        "implemented_by": [
+          "WRK-002"
+        ],
+        "acceptance": "Only typed self, authorized-player, addressed-chat, bounded entity, position, connection, and behavior evidence enters core; suppressed observations carry reasons.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-004",
+        "summary": "Hold an in-character conversation through one runtime-owned utterance-delivery path",
+        "status": "accepted",
+        "source": "User vertical-slice requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-004"
+        ],
+        "verified_by": [
+          "VER-004"
+        ],
+        "implemented_by": [
+          "WRK-003"
+        ],
+        "acceptance": "One accepted addressed chat yields at most one player-visible submission attempt for its UtteranceId; unconfirmed delivery is unknown and is not retried.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-005",
+        "summary": "Expose only typed validated Gate-A action and control capabilities",
+        "status": "accepted",
+        "source": "User safety and action requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-005"
+        ],
+        "verified_by": [
+          "VER-005"
+        ],
+        "implemented_by": [
+          "WRK-003"
+        ],
+        "acceptance": "Gate A permits follow_player and stop_behavior plus emergency stop; no speech, raw commands, item mutation, building, crafting, or combat enters the physical action union.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-006",
+        "summary": "Preserve causal conversation-to-action-to-evidence linkage",
+        "status": "accepted",
+        "source": "Defining proof",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-005"
+        ],
+        "verified_by": [
+          "VER-006"
+        ],
+        "implemented_by": [
+          "WRK-003",
+          "WRK-005"
+        ],
+        "acceptance": "The acceptance request, model decision, ActionId, BehaviorId, behavior events, and capability-appropriate evidence share one causal chain; started is never success.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-007",
+        "summary": "Persist event-grounded continuity across full shutdown and restart",
+        "status": "accepted",
+        "source": "User persistence requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-006",
+          "CMP-007"
+        ],
+        "verified_by": [
+          "VER-007"
+        ],
+        "implemented_by": [
+          "WRK-004"
+        ],
+        "acceptance": "Complete source events and one deterministic encounter survive restart and naturally affect later dialogue or behavior.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-008",
+        "summary": "Separate world facts, bounded observations, subjective beliefs, source events, and model interpretations",
+        "status": "accepted",
+        "source": "User epistemic separation requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-002",
+          "CMP-007"
+        ],
+        "verified_by": [
+          "VER-008"
+        ],
+        "implemented_by": [
+          "WRK-001",
+          "WRK-004"
+        ],
+        "acceptance": "Contracts and context label every epistemic category; a summary cannot replace or prove its source event.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-009",
+        "summary": "Represent dispatch, activity, completion, failure, interruption, cancellation, timeout, and uncertainty honestly",
+        "status": "accepted",
+        "source": "User safe recovery requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-001",
+          "CMP-005"
+        ],
+        "verified_by": [
+          "VER-009"
+        ],
+        "implemented_by": [
+          "WRK-001",
+          "WRK-003",
+          "WRK-004"
+        ],
+        "acceptance": "Fault tests distinguish all states and never generalize movement evidence to authoritative mutation.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-010",
+        "summary": "Suspend cognition and embodiment while the authorized player is absent without disconnecting a healthy client",
+        "status": "accepted",
+        "source": "Owner-confirmed first-proof absence behavior",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-008"
+        ],
+        "verified_by": [
+          "VER-010"
+        ],
+        "implemented_by": [
+          "WRK-003"
+        ],
+        "acceptance": "Absence enters SUSPENDED, cancels cognition and behavior, retains only presence/connection/safety control, makes zero model calls, and resumes only after observed return.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-011",
+        "summary": "Use deterministic trigger, safety, presence, queue, and behavior logic",
+        "status": "accepted",
+        "source": "User efficiency requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-008"
+        ],
+        "verified_by": [
+          "VER-011"
+        ],
+        "implemented_by": [
+          "WRK-001",
+          "WRK-003"
+        ],
+        "acceptance": "Ambient events and routine movement make zero model calls; only Gate-A designated stimuli enqueue cognition.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-012",
+        "summary": "Scale through a two-agent gate toward 8-10 separate characters",
+        "status": "deferred",
+        "source": "User intended cast size",
+        "priority": "P1",
+        "owned_by": [
+          "CMP-003",
+          "CMP-008"
+        ],
+        "verified_by": [
+          "VER-012"
+        ],
+        "implemented_by": [
+          "WRK-010",
+          "WRK-011"
+        ],
+        "acceptance": "After Gate A, two-agent isolation passes before any 8-10-character load claim.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-013",
+        "summary": "Enforce per-character knowledge and memory visibility boundaries",
+        "status": "deferred",
+        "source": "User separate knowledge-boundary requirement",
+        "priority": "P1",
+        "owned_by": [
+          "CMP-007"
+        ],
+        "verified_by": [
+          "VER-013"
+        ],
+        "implemented_by": [
+          "WRK-010"
+        ],
+        "acceptance": "Post-proof two-agent fixtures prove private records do not cross without an explicit transmission event.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-014",
+        "summary": "Maintain separate relationship belief goal intention and plan state per character",
+        "status": "deferred",
+        "source": "User multi-character depth requirement",
+        "priority": "P1",
+        "owned_by": [
+          "CMP-003",
+          "CMP-007"
+        ],
+        "verified_by": [
+          "VER-014"
+        ],
+        "implemented_by": [
+          "WRK-015"
+        ],
+        "acceptance": "Post-proof schemas and behavior tests demonstrate independent, directional, versioned state.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-015",
+        "summary": "Emit a minimal causal evidence trail across the Gate-A loop",
+        "status": "accepted",
+        "source": "User observability and testability requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-009"
+        ],
+        "verified_by": [
+          "VER-015"
+        ],
+        "implemented_by": [
+          "WRK-001",
+          "WRK-004",
+          "WRK-005"
+        ],
+        "acceptance": "An export joins principal/world/epoch/event/conversation/model/utterance/action/behavior/evidence IDs with redaction.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-016",
+        "summary": "Provide owner-safe local diagnosis stop backup restore reset and evidence commands",
+        "status": "accepted",
+        "source": "Operator control necessity surfaced by architect",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-010"
+        ],
+        "verified_by": [
+          "VER-016"
+        ],
+        "implemented_by": [
+          "WRK-001",
+          "WRK-004"
+        ],
+        "acceptance": "Package scripts emit PASS/WARN/FAIL and perform safeguarded local operations; authenticated service and corrections remain deferred.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-017",
+        "summary": "Provide minimal Gate-A migration integrity and safe backup/restore",
+        "status": "accepted",
+        "source": "Persistence operations necessity surfaced by architect",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-006",
+          "CMP-010"
+        ],
+        "verified_by": [
+          "VER-017"
+        ],
+        "implemented_by": [
+          "WRK-004"
+        ],
+        "acceptance": "Empty, repeat, backup, separate-path restore, integrity, and safeguarded reset checks pass; governance/deletion breadth is deferred.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-018",
+        "summary": "Recover predictably from model adapter process restart and stale-behavior failures",
+        "status": "accepted",
+        "source": "User recovery requirement",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-005"
+        ],
+        "verified_by": [
+          "VER-018"
+        ],
+        "implemented_by": [
+          "WRK-003",
+          "WRK-004"
+        ],
+        "acceptance": "Recovery tests yield typed interruption/unknown/reconciliation outcomes and never claim a disconnected client detects player return.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-019",
+        "summary": "Maintain evidence-based resumption and bounded IDE-agent micro-steps",
+        "status": "accepted",
+        "source": "User explicitly requested interrupted-development recovery",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-010"
+        ],
+        "verified_by": [
+          "VER-019"
+        ],
+        "implemented_by": [
+          "WRK-001"
+        ],
+        "acceptance": "Every active package has exact files, prompt, commands, output, pass/fail, recovery, stop condition, and checkpoint evidence.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-020",
+        "summary": "Add authoritative item and inventory mutations only after the defining proof",
+        "status": "deferred",
+        "source": "User requested safe physical action breadth",
+        "priority": "P1",
+        "owned_by": [
+          "CMP-005"
+        ],
+        "verified_by": [
+          "VER-020"
+        ],
+        "implemented_by": [
+          "WRK-012"
+        ],
+        "acceptance": "Post-proof capability-specific ownership, transfer, crash, and reconciliation tests pass.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-021",
+        "summary": "Preserve an optional safe seam for LSL-inspired action tags or emotes",
+        "status": "deferred",
+        "source": "Owner idea recorded 2026-07-17",
+        "priority": "P2",
+        "owned_by": [
+          "CMP-003",
+          "CMP-005"
+        ],
+        "verified_by": [
+          "VER-021"
+        ],
+        "implemented_by": [
+          "WRK-013"
+        ],
+        "acceptance": "Any future notation is threat-modeled and compiles to existing typed capability/control boundaries without becoming a script executor.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-101",
+        "summary": "Meet coherent Gate-A cognition response dispatch and control budgets",
+        "status": "accepted",
+        "source": "Quality budget established by architect",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-002",
+          "CMP-005",
+          "CMP-009"
+        ],
+        "verified_by": [
+          "VER-101"
+        ],
+        "implemented_by": [
+          "WRK-003",
+          "WRK-005"
+        ],
+        "acceptance": "Canonical LIM-GA-001 through LIM-GA-007 separate outer response, model, dispatch, utterance, behavior, reevaluation, and priority-control budgets; the semantic guard verifies their required relationships.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-102",
+        "summary": "Bound 8-10-agent concurrency and idle model calls",
+        "status": "deferred",
+        "source": "User scale and efficiency goal",
+        "priority": "P1",
+        "owned_by": [
+          "CMP-008"
+        ],
+        "verified_by": [
+          "VER-102"
+        ],
+        "implemented_by": [
+          "WRK-011"
+        ],
+        "acceptance": "Post-proof capacity limits are set from measured two-agent behavior before ten-agent testing.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-103",
+        "summary": "Enforce multi-level model cost and concurrency budgets",
+        "status": "deferred",
+        "source": "User efficient proof priority",
+        "priority": "P1",
+        "owned_by": [
+          "CMP-004",
+          "CMP-008"
+        ],
+        "verified_by": [
+          "VER-103"
+        ],
+        "implemented_by": [
+          "WRK-009"
+        ],
+        "acceptance": "Post-proof run/session/daily budgets pass deterministic exhaustion tests; Gate A uses one timeout, stimulus suppression, and provider-side spend protection.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-104",
+        "summary": "Meet Gate-A durability shutdown restart and restore targets",
+        "status": "accepted",
+        "source": "Operational quality necessity surfaced by architect",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-006"
+        ],
+        "verified_by": [
+          "VER-104"
+        ],
+        "implemented_by": [
+          "WRK-004",
+          "WRK-005"
+        ],
+        "acceptance": "Committed events survive full stop, safety control precedes the LIM-GA-013 shutdown deadline, and a verified backup restores to a separate path.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-105",
+        "summary": "Prevent secret private-context command-channel and accidental network exposure",
+        "status": "accepted",
+        "source": "Security and privacy necessity surfaced by architect",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-001",
+          "CMP-004",
+          "CMP-010"
+        ],
+        "verified_by": [
+          "VER-105"
+        ],
+        "implemented_by": [
+          "WRK-001",
+          "WRK-002",
+          "WRK-003"
+        ],
+        "acceptance": "Checks find no credentials in logs/prompts/data, no slash-command route, and no unapproved public listener.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-106",
+        "summary": "Keep the default automated suite deterministic and network-free",
+        "status": "accepted",
+        "source": "User testable proof priority",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-009"
+        ],
+        "verified_by": [
+          "VER-106"
+        ],
+        "implemented_by": [
+          "WRK-001"
+        ],
+        "acceptance": "Default tests pass twice with fakes, network denied, and zero live world/model calls.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-107",
+        "summary": "Demonstrate portability only with a second materially different real environment adapter",
+        "status": "deferred",
+        "source": "Reusable platform requirement",
+        "priority": "P1",
+        "owned_by": [
+          "CMP-003"
+        ],
+        "verified_by": [
+          "VER-107"
+        ],
+        "implemented_by": [
+          "WRK-014"
+        ],
+        "acceptance": "No portability claim appears before the second real adapter passes revised conformance without freezing Minecraft-shaped abstractions.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-108",
+        "summary": "Suppress uncontrolled Gate-A cognition stimuli",
+        "status": "accepted",
+        "source": "Revision 2 experience safeguard",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-008"
+        ],
+        "verified_by": [
+          "VER-108"
+        ],
+        "implemented_by": [
+          "WRK-003"
+        ],
+        "acceptance": "Only addressed authorized-player chat and designated result/restart events trigger; overflow/coalescing/suspension reasons are observable; absence produces zero calls.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-109",
+        "summary": "Promote only deterministic Gate-A encounters",
+        "status": "accepted",
+        "source": "Revision 2 continuity rule",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-007"
+        ],
+        "verified_by": [
+          "VER-109"
+        ],
+        "implemented_by": [
+          "WRK-004"
+        ],
+        "acceptance": "Promotion occurs only on an explicit remember request or the designated acceptance interaction that caused the demonstrated action.",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "REQ-110",
+        "summary": "Pass Gate A through the LIM-GA-014 consecutive machine-evidenced live repetitions and owner experiential approval",
+        "status": "accepted",
+        "source": "Revision 2 objective proof gate",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-009"
+        ],
+        "verified_by": [
+          "VER-110"
+        ],
+        "implemented_by": [
+          "WRK-005"
+        ],
+        "acceptance": "The LIM-GA-014 consecutive full meet-act-suspend-stop-restart-recall runs pass, and the owner records that the live character is worth continuing.",
+        "artifact": "08-verification.md"
+      },
+      {
+        "id": "REQ-111",
+        "summary": "Use stable internal principal world epoch and causal identities",
+        "status": "accepted",
+        "source": "Revision 2 identity correction",
+        "priority": "P0",
+        "owned_by": [
+          "CMP-003",
+          "CMP-006"
+        ],
+        "verified_by": [
+          "VER-111"
+        ],
+        "implemented_by": [
+          "WRK-001",
+          "WRK-004"
+        ],
+        "acceptance": "Authorization, participants, memory, action ownership, and restart records use internal IDs; Minecraft aliases map to PrincipalId; incompatible reset increments WorldEpoch.",
+        "artifact": "03-domain-state-data.md"
+      }
+    ],
+    "invariants": [
+      {
+        "id": "INV-001",
+        "summary": "Paper/Minecraft is authority for physical state; Mineflayer is an observation and command channel",
+        "status": "accepted",
+        "source": "Agent-world profile and user belief/truth requirement",
+        "scope": "Platform",
+        "enforcement": "Typed observation/evidence contracts and restart reconciliation",
+        "verified_by": [
+          "VER-201"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-002",
+        "summary": "Model narration and utterance text cannot mutate physical state",
+        "status": "accepted",
+        "source": "Agent-world profile",
+        "scope": "Model/action boundary",
+        "enforcement": "Separate UtteranceProposal and ActionRequest unions; no narration executor",
+        "verified_by": [
+          "VER-202"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-003",
+        "summary": "Action status advances only on the minimum environment-derived evidence required by that capability",
+        "status": "accepted",
+        "source": "Agent-world profile",
+        "scope": "Action lifecycle",
+        "enforcement": "CapabilityEvidence union and per-capability evidence threshold table",
+        "verified_by": [
+          "VER-203"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-004",
+        "summary": "Every model run belongs to exactly one agent and scoped context",
+        "status": "accepted",
+        "source": "Knowledge-boundary requirement",
+        "scope": "Cognition",
+        "enforcement": "Per-agent actor, runtime-issued IDs, context schema",
+        "verified_by": [
+          "VER-204"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-005",
+        "summary": "Private knowledge crosses agents only through explicit transmission",
+        "status": "accepted",
+        "source": "Agent-world profile",
+        "scope": "Memory/context",
+        "enforcement": "Viewer-aware visibility queries and source provenance",
+        "verified_by": [
+          "VER-205"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-006",
+        "summary": "One agent has at most one exclusive long-running physical behavior lease",
+        "status": "accepted",
+        "source": "Concurrency proof obligation",
+        "scope": "Runtime/action gateway",
+        "enforcement": "BehaviorId lease and high-priority control path",
+        "verified_by": [
+          "VER-206"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-007",
+        "summary": "Duplicate event utterance action and behavior IDs cannot duplicate records or effects",
+        "status": "accepted",
+        "source": "Restart and retry proof obligation",
+        "scope": "Persistence/action",
+        "enforcement": "Stable IDs, unique keys, one utterance attempt, idempotent lookup, and non-blind retry",
+        "verified_by": [
+          "VER-207"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-008",
+        "summary": "Gate-A schema changes are ordered transactional and recorded; broad migration governance is deferred",
+        "status": "accepted",
+        "source": "Persistence safety requirement",
+        "scope": "Persistence",
+        "enforcement": "Minimal migration ledger/checksum and WRK-004 tests",
+        "verified_by": [
+          "VER-208"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-009",
+        "summary": "Models receive no raw commands code filesystem credentials or open network",
+        "status": "accepted",
+        "source": "User action-safety requirement",
+        "scope": "Model/action boundary",
+        "enforcement": "Closed tool catalogue, no sandbox tools, dependency checks",
+        "verified_by": [
+          "VER-209"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-010",
+        "summary": "Agent Principal World and WorldEpoch identities remain stable across transport sessions",
+        "status": "accepted",
+        "source": "Persistence requirement",
+        "scope": "Character lifecycle",
+        "enforcement": "Internal IDs and explicit alias/epoch mapping",
+        "verified_by": [
+          "VER-210"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-011",
+        "summary": "SUSPENDED overrides every cognition trigger and permits no model call or physical behavior",
+        "status": "accepted",
+        "source": "Owner-confirmed absence policy",
+        "scope": "Session lifecycle",
+        "enforcement": "Availability gate, abort signals, priority stop, and suppression telemetry",
+        "verified_by": [
+          "VER-211"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-012",
+        "summary": "Dependency health is independent of agent connection and availability state",
+        "status": "accepted",
+        "source": "Failure-isolation requirement",
+        "scope": "Runtime topology",
+        "enforcement": "Four health axes; DEGRADED is never an exclusive lifecycle state",
+        "verified_by": [
+          "VER-212"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-013",
+        "summary": "Derived interpretations require visible source-event provenance or are rejected; provenance does not prove faithfulness",
+        "status": "accepted",
+        "source": "Agent-world memory profile",
+        "scope": "Durable cognition",
+        "enforcement": "Foreign-key/source visibility checks, source retention, contradiction and continuity fixtures",
+        "verified_by": [
+          "VER-213"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-014",
+        "summary": "Comprehensive operator correction is deferred and may never falsify physical state",
+        "status": "deferred",
+        "source": "Operator safety requirement",
+        "scope": "Administration",
+        "enforcement": "Future typed correction ADR and audit; no generic Gate-A replacement contract",
+        "verified_by": [
+          "VER-214"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-015",
+        "summary": "World portability is not demonstrated until a second materially different real adapter passes a revised suite",
+        "status": "deferred",
+        "source": "Reusable platform requirement",
+        "scope": "Portability",
+        "enforcement": "WRK-014 gate; Gate A uses boundary fakes only",
+        "verified_by": [
+          "VER-215"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-016",
+        "summary": "The runtime has exactly one player-visible utterance validation and submission owner",
+        "status": "accepted",
+        "source": "Revision 2 speech correction",
+        "scope": "Conversation delivery",
+        "enforcement": "CMP-003 plus INT-011; no speak action, finalSpeech, tool callback, or blind retry",
+        "verified_by": [
+          "VER-216"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-017",
+        "summary": "The actor serializes decisions and state mutation but never waits for physical behavior duration",
+        "status": "accepted",
+        "source": "Revision 2 asynchronous behavior correction",
+        "scope": "Runtime concurrency",
+        "enforcement": "Immediate dispatch result and later BehaviorEvent stream",
+        "verified_by": [
+          "VER-217"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      },
+      {
+        "id": "INV-018",
+        "summary": "No runtime means no subjective elapsed time or invented offline event",
+        "status": "accepted",
+        "source": "Preserved project constraint",
+        "scope": "Continuity",
+        "enforcement": "Restart gap marker and explicit unknown interval",
+        "verified_by": [
+          "VER-218"
+        ],
+        "artifact": "02-context-and-invariants.md"
+      }
+    ],
+    "decisions": [
+      {
+        "id": "DEC-001",
+        "summary": "Use a Minecraft-first modular monolith with revisable provider/environment seams",
+        "status": "accepted",
+        "source": "Revision 2 portability resolution",
+        "alternatives": [
+          "Minecraft-specific monolith",
+          "premature generic platform or microservices"
+        ],
+        "consequences": [
+          "Fast local proof and explicit boundaries",
+          "Fakes test contracts but do not prove world portability",
+          "Minecraft-shaped assumptions remain revisable until a second real adapter"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-002",
+        "summary": "Empirically select and pin the newest smoke-tested stable Paper/Mineflayer/pathfinder/Java/Node intersection",
+        "status": "accepted",
+        "source": "Revision 2 compatibility resolution",
+        "alternatives": [
+          "Hard-code a version from documentation",
+          "Follow latest dependencies without a record"
+        ],
+        "consequences": [
+          "SPIKE-000 and WRK-002 gate all embodiment work",
+          "Exact versions are evidence, not architectural commitments",
+          "Fallback to another verified intersection needs no architecture review"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-003",
+        "summary": "Use strict TypeScript on an empirically pinned Node LTS with npm Zod and Vitest",
+        "status": "accepted",
+        "source": "Both selected primary adapters are TypeScript-first",
+        "alternatives": [
+          "Python core plus Node bridge",
+          "Java Paper plugin/core"
+        ],
+        "consequences": [
+          "One runtime and shared schemas",
+          "WRK-002 pins Node before WRK-004 storage work",
+          "No native SQLite binding may be selected implicitly"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-004",
+        "summary": "Keep provider-neutral ModelPort and use the simplest supported OpenAI structured-output adapter for Gate A",
+        "status": "accepted",
+        "source": "Revision 2 provider resolution; primary OpenAI sources re-read 2026-07-17",
+        "alternatives": [
+          "Responses API structured parsing directly",
+          "Agents SDK adapter when it materially simplifies Gate A",
+          "Local provider later"
+        ],
+        "consequences": [
+          "One ModelDecision schema leaves core provider-neutral",
+          "Agents SDK is optional and non-permanent",
+          "Model alias and adapter versions live in the dated compatibility record"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-005",
+        "summary": "Use SQLite WAL after Node is pinned; prefer verified node:sqlite and use named native fallback only if its Gate-A probes fail",
+        "status": "accepted",
+        "source": "Revision 2 SQLite/Node resolution",
+        "alternatives": [
+          "node:sqlite on selected Node",
+          "better-sqlite3 with Python 3 and Visual Studio C++ Build Tools",
+          "PostgreSQL or vector database from start"
+        ],
+        "consequences": [
+          "WRK-004 depends on WRK-002 Node evidence",
+          "node:sqlite must pass WAL transaction FTS backup restore busy and interruption probes",
+          "Fallback is better-sqlite3 only through an explicit decision update; IDE agents may not choose it silently",
+          "A project-owned transaction wrapper isolates either binding"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-006",
+        "summary": "Use a per-agent decision actor plus independent asynchronous behavior leases and global cognition backpressure",
+        "status": "accepted",
+        "source": "Concurrency and cancellation proof obligations",
+        "alternatives": [
+          "Await movement inside model callbacks",
+          "Free-running handlers"
+        ],
+        "consequences": [
+          "Actor owns decisions and mutations, not duration",
+          "Follow returns started plus BehaviorId immediately",
+          "Priority control bypasses the ordinary mailbox"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-007",
+        "summary": "Keep a healthy Mineflayer client connected but enter SUSPENDED whenever the authorized player is absent",
+        "status": "accepted",
+        "source": "Revision 2 lifecycle resolution",
+        "alternatives": [
+          "Disconnect on absence",
+          "Unattended cognition"
+        ],
+        "consequences": [
+          "Only presence, connection health, and priority safety/operator control continue",
+          "Return is detected only by the still-connected client",
+          "Operator shutdown and network/server failure use OFFLINE or DISCONNECTED instead"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-008",
+        "summary": "Use loopback-isolated offline authentication only for local proof",
+        "status": "accepted",
+        "source": "Reversible safe default for Mineflayer proof without extra account",
+        "alternatives": [
+          "Microsoft-authenticated dedicated bot account"
+        ],
+        "consequences": [
+          "Reference proof needs no second account",
+          "LAN/WAN exposure is prohibited",
+          "Shared hosting requires QST-006 and online mode"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-009",
+        "summary": "Use deterministic logic for routine embodiment and models only for designated cognitive stimuli",
+        "status": "accepted",
+        "source": "User efficiency requirement and agent-world profile",
+        "alternatives": [
+          "Model-driven every tick/action",
+          "Fully scripted NPC"
+        ],
+        "consequences": [
+          "Gate-A trigger allowlist is closed",
+          "Ambient movement/entity noise never wakes the model",
+          "Autonomous idle requires a later measured policy"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-010",
+        "summary": "Treat speech as a one-attempt runtime delivery workflow, never a physical ActionRequest",
+        "status": "accepted",
+        "source": "Revision 2 speech resolution",
+        "alternatives": [
+          "speak tool/action",
+          "finalSpeech plus action tool",
+          "blind delivery retry"
+        ],
+        "consequences": [
+          "ModelDecision has optional UtteranceProposal",
+          "Runtime assigns UtteranceId, persists intent, validates, and attempts once",
+          "Unconfirmed send is unknown unless environment supplies definitive deduplication"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-011",
+        "summary": "Parallax/Lattice persona packages own authored character profile; Agentic-World owns only runtime identity and a versioned profile reference",
+        "status": "accepted",
+        "source": "Existing user-owned Parallax/Lattice profile architecture",
+        "alternatives": [
+          "Duplicate AgentProfile inside Agentic-World",
+          "Embed persona in provider session"
+        ],
+        "consequences": [
+          "DAT-001 becomes CharacterIdentityRecord",
+          "Gate A reads one compiled persona artifact through INT-012",
+          "Profile mutation remains outside this runtime"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      },
+      {
+        "id": "DEC-012",
+        "summary": "Prove continuity from complete durable events and deterministic encounters before model-authored memory",
+        "status": "accepted",
+        "source": "Revision 2 continuity resolution",
+        "alternatives": [
+          "Autonomous salience scoring",
+          "Persist only a model summary",
+          "Provider conversation state"
+        ],
+        "consequences": [
+          "Acceptance encounter promotion is deterministic",
+          "Summaries and relationship implications remain replaceable interpretations",
+          "Natural recall after restart must use retrieved source-grounded context"
+        ],
+        "artifact": "decisions/accepted-decisions.md"
+      }
+    ],
+    "assumptions": [
+      {
+        "id": "ASM-001",
+        "summary": "Owner can run a Java Edition client and private Paper server",
+        "status": "accepted",
+        "source": "Minecraft selected as first environment",
+        "owner": "owner",
+        "impact": "If false, run Paper on another private authenticated host or change the first environment.",
+        "validation": "WRK-002 host and connection probe",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "ASM-002",
+        "summary": "Development host has enough Java Node and memory resources",
+        "status": "unvalidated",
+        "source": "Local-first reference topology",
+        "owner": "implementation-agent",
+        "impact": "Reduce Paper allocation or move Paper to another private host.",
+        "validation": "WRK-002 resource check",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "ASM-003",
+        "summary": "A funded OpenAI API credential is available only for SPIKE-000 and live Gate-A steps",
+        "status": "unvalidated",
+        "source": "Owner selected OpenAI-first cognition",
+        "owner": "owner",
+        "impact": "All fake/deterministic work continues; structured live model gates stop with WARN until a credential is safely configured.",
+        "validation": "SPIKE-000 doctor and one bounded structured call",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "ASM-004",
+        "summary": "The first slice has one authorized player and one NPC",
+        "status": "accepted",
+        "source": "Owner-confirmed vertical slice",
+        "owner": "owner",
+        "impact": "Multi-player attention arbitration would move earlier if false.",
+        "validation": "Charter confirmation",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "ASM-005",
+        "summary": "Initial interaction is English text chat",
+        "status": "accepted",
+        "source": "Voice and localization are explicitly deferred",
+        "owner": "owner",
+        "impact": "Localization or voice interfaces would need additional contracts and acceptance.",
+        "validation": "Owner confirmation before canonical fixture review",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "ASM-006",
+        "summary": "No incompatible anti-cheat or gameplay plugin is required in the reference world",
+        "status": "unvalidated",
+        "source": "Clean private Paper proof target",
+        "owner": "implementation-agent",
+        "impact": "Add compatibility work or remove the plugin.",
+        "validation": "WRK-002 clean-server probe and plugin inventory",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "ASM-007",
+        "summary": "Proof data may remain local to an owner-controlled machine",
+        "status": "accepted",
+        "source": "Private proof scope",
+        "owner": "owner",
+        "impact": "Remote/shared use reopens encryption consent retention and operator security.",
+        "validation": "Deployment review",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "ASM-008",
+        "summary": "A temporary named persona package fixture is acceptable until canonical character content is chosen",
+        "status": "accepted",
+        "source": "Persona is not yet specified and does not alter platform shape",
+        "owner": "owner",
+        "impact": "Engineering can proceed; owner experiential Gate-A approval still requires an approved named fixture.",
+        "validation": "QST-002 review before WRK-003 live step",
+        "architecture_shaping": false,
+        "artifact": "01-requirements.md"
+      }
+    ],
+    "questions": [
+      {
+        "id": "QST-001",
+        "summary": "Which embodiment model boundary and absence behavior define the first proof?",
+        "status": "resolved",
+        "source": "Architecture discovery on 2026-07-17",
+        "owner": "owner",
+        "blocking": true,
+        "decision_needed_by": "Discovery gate",
+        "resolution": "Mineflayer embodiment; provider-neutral OpenAI-first structured adapter; healthy connected suspension while absent",
+        "artifact": "00-charter.md"
+      },
+      {
+        "id": "QST-002",
+        "summary": "What is the first NPC's canonical identity voice history values and starting relationship?",
+        "status": "open",
+        "source": "Character content not specified",
+        "owner": "owner",
+        "blocking": false,
+        "decision_needed_by": "Before WRK-003 live character review",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "QST-003",
+        "summary": "What do the owner's LSL scripts and action tags mean and what authority may they have?",
+        "status": "deferred",
+        "source": "Owner idea recorded 2026-07-17",
+        "owner": "owner-and-architect",
+        "blocking": false,
+        "decision_needed_by": "Before WRK-013 implementation",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "QST-004",
+        "summary": "Should durable memory or conversation retention differ from local defaults?",
+        "status": "deferred",
+        "source": "Retention preference not specified",
+        "owner": "owner",
+        "blocking": false,
+        "decision_needed_by": "Gate B retention/deletion work",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "QST-005",
+        "summary": "What should continue compress or pause while the owner is absent in a later phase?",
+        "status": "deferred",
+        "source": "Unattended life explicitly deferred",
+        "owner": "owner",
+        "blocking": false,
+        "decision_needed_by": "Before unattended-life work",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "QST-006",
+        "summary": "Will the bot later join a LAN or remote authenticated server with a dedicated account?",
+        "status": "open",
+        "source": "Reference proof is loopback-only",
+        "owner": "owner",
+        "blocking": false,
+        "decision_needed_by": "Before any LAN/WAN deployment",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "QST-007",
+        "summary": "Where is authored AgentProfile authority?",
+        "status": "resolved",
+        "source": "Prior Parallax/Lattice and persona compiler artifacts",
+        "owner": "owner",
+        "blocking": true,
+        "decision_needed_by": "Blueprint revision 2",
+        "resolution": "User-owned Parallax/Lattice persona package is authoritative; Agentic-World stores AgentId plus profile reference/version/hash and reads compiled context through INT-012.",
+        "artifact": "00-charter.md"
+      }
+    ],
+    "risks": [
+      {
+        "id": "RSK-001",
+        "summary": "Paper Mineflayer pathfinder Java or Node drift breaks progressive embodiment",
+        "status": "active",
+        "source": "Current official support ranges differ after Minecraft 1.21.11",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "Re-read primary sources, record exact versions, and pass every SPIKE-000/WRK-002 progressive gate before cognition or persistence.",
+        "trigger": "Any gate after join fails or integration resumes after dependency/time drift",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-002",
+        "summary": "Model proposes invalid unsafe or impossible action",
+        "status": "active",
+        "source": "Probabilistic model output",
+        "likelihood": "high",
+        "impact": "medium",
+        "mitigation": "Untrusted typed proposals, closed catalogue, preconditions, limits, and observed results.",
+        "trigger": "Validation rejection rate exceeds ten percent",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-003",
+        "summary": "Crash or disconnect after dispatch leaves an action or utterance outcome uncertain",
+        "status": "active",
+        "source": "External world cannot join SQLite transaction",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "Pre-dispatch durable intent, typed unknown state, capability-specific reconciliation, one utterance attempt, and no blind retry.",
+        "trigger": "Restart finds SUBMITTING, DISPATCHING, DISPATCHED, or ACTIVE without terminal evidence",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-004",
+        "summary": "Model-authored interpretation becomes a false durable memory",
+        "status": "active",
+        "source": "Model-derived reflection",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "Persist source events first; deterministic encounter promotion; provenance-or-reject; contradiction/invention fixtures; summaries never replace sources.",
+        "trigger": "Interpretation lacks visible sources, contradicts invariant facts, or claims certainty beyond evidence",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-005",
+        "summary": "Provider latency or failure breaks conversational cadence",
+        "status": "active",
+        "source": "Remote metered cognition",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "LIM-GA-002 remains inside LIM-GA-001, LIM-GA-016 controls retries, context is bounded, and failures are explicit.",
+        "trigger": "REQ-101 fails in two consecutive live samples or model health becomes unavailable",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-006",
+        "summary": "Prompt/history growth or retrieval failure erodes continuity",
+        "status": "active",
+        "source": "Long-lived character continuity",
+        "likelihood": "medium",
+        "impact": "medium",
+        "mitigation": "Gate A uses the fixed retrieval/continuity suite and LIM-GA-018; compaction and semantic retrieval remain measured Gate-B mitigations.",
+        "trigger": "A release candidate misses the threshold twice after query/index tuning",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-007",
+        "summary": "SQLite binding friction or contention delays proof",
+        "status": "active",
+        "source": "Single-writer local store",
+        "likelihood": "low",
+        "impact": "medium",
+        "mitigation": "Pin Node first; prefer node:sqlite only after WAL/transaction/FTS/backup probes; explicit better-sqlite3 fallback/toolchain; short transactions.",
+        "trigger": "WRK-004 probe fails or write busy errors appear in Gate A",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-008",
+        "summary": "Private knowledge leaks between characters",
+        "status": "active",
+        "source": "Multi-agent shared runtime/store",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "Viewer-scoped queries, visibility labels, context manifests, adversarial two-agent gate.",
+        "trigger": "VER-013 or VER-205 fails",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-009",
+        "summary": "Offline-mode development server becomes network-exposed",
+        "status": "active",
+        "source": "DEC-008 development shortcut",
+        "likelihood": "low",
+        "impact": "critical",
+        "mitigation": "Loopback bind, firewall/LAN probe, authenticated online mode before shared hosting.",
+        "trigger": "Port reachable from another device/context",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-010",
+        "summary": "Blueprint and code drift after interrupted sessions",
+        "status": "active",
+        "source": "Multi-session implementation",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "One implementation-status file, generated registry views, micro-step checkpoints, strict structural validation, and semantic guard.",
+        "trigger": "Declared paths contracts or statuses disagree with repository evidence",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-011",
+        "summary": "Ambient stimuli or population growth creates uncontrolled model calls",
+        "status": "active",
+        "source": "Naive autonomous scheduling",
+        "likelihood": "high",
+        "impact": "high",
+        "mitigation": "Closed Gate-A trigger allowlist, coalescing, pending queue two, suppression telemetry, absence and ambient soak tests.",
+        "trigger": "Any call occurs while suspended or during the ordinary-event soak",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-012",
+        "summary": "LSL or action tags become an alternate unvalidated action channel",
+        "status": "active",
+        "source": "Deferred notation idea",
+        "likelihood": "medium-later",
+        "impact": "high",
+        "mitigation": "Keep QST-003 deferred and require compilation into INT-004 plus threat model.",
+        "trigger": "Any notation bypasses ActionGateway",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-013",
+        "summary": "Competing speech paths duplicate player-visible dialogue",
+        "status": "active",
+        "source": "Revision 2 contradiction audit",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "DEC-010, one CMP-003 delivery owner, UtteranceId, one attempt, semantic guard banned tokens, duplicate-speech regression.",
+        "trigger": "More than one submission attempt for an UtteranceId",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-014",
+        "summary": "Lifecycle coupling falsely claims a disconnected client can detect player return",
+        "status": "active",
+        "source": "Revision 2 lifecycle audit",
+        "likelihood": "medium",
+        "impact": "high",
+        "mitigation": "Orthogonal connection/availability states; keep healthy client connected during absence; separate disconnect tests.",
+        "trigger": "Any return transition lacks a READY presence observation",
+        "artifact": "01-requirements.md"
+      },
+      {
+        "id": "RSK-015",
+        "summary": "World restore or reset contaminates memories across incompatible history",
+        "status": "active",
+        "source": "Revision 2 identity audit",
+        "likelihood": "low",
+        "impact": "high",
+        "mitigation": "Stable WorldId, monotonic WorldEpoch, epoch-scoped events/encounters, reset confirmation and tests.",
+        "trigger": "World fingerprint changes without an explicit epoch decision",
+        "artifact": "01-requirements.md"
+      }
+    ],
+    "components": [
+      {
+        "id": "CMP-001",
+        "summary": "Minecraft World Adapter",
+        "status": "accepted",
+        "source": "DEC-002",
+        "responsibilities": [
+          "Mineflayer connection and typed observation mapping",
+          "Bounded queries",
+          "Physical behavior dispatch and capability-specific evidence",
+          "One environment chat-submission method without retry policy"
+        ],
+        "prohibited_responsibilities": [
+          "Cognition or memory",
+          "Utterance policy or deduplication",
+          "Declaring unobserved authoritative mutation success"
+        ],
+        "owned_state": [
+          "DAT-003"
+        ],
+        "requirements": [
+          "REQ-002",
+          "REQ-003",
+          "REQ-009",
+          "REQ-010",
+          "REQ-018"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-002",
+        "summary": "Perception Normalizer",
+        "status": "accepted",
+        "source": "Bounded perception requirement",
+        "responsibilities": [
+          "Parse untrusted adapter input into closed observation unions",
+          "Map Minecraft aliases to PrincipalId",
+          "Bound, deduplicate, filter, coalesce, and explain suppression",
+          "Build expiring self/world snapshots"
+        ],
+        "prohibited_responsibilities": [
+          "Omniscient world access",
+          "Durable belief",
+          "Model wake decisions"
+        ],
+        "owned_state": [
+          "DAT-004",
+          "DAT-005"
+        ],
+        "requirements": [
+          "REQ-003",
+          "REQ-008",
+          "REQ-108"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-003",
+        "summary": "Agent Runtime Core and sole utterance-delivery owner",
+        "status": "accepted",
+        "source": "DEC-001 and agent lifecycle profile",
+        "responsibilities": [
+          "Orthogonal connection/availability state coordination",
+          "Per-agent decision actor and causal context",
+          "ModelDecision validation",
+          "Exactly one UtteranceId validation/submission workflow",
+          "Dispatch asynchronous behavior without awaiting duration",
+          "Natural retrieval use after restart"
+        ],
+        "prohibited_responsibilities": [
+          "Direct vendor imports",
+          "Direct physical execution",
+          "A second speech path",
+          "Waiting for follow completion inside cognition"
+        ],
+        "owned_state": [
+          "DAT-001",
+          "DAT-002",
+          "DAT-010"
+        ],
+        "requirements": [
+          "REQ-001",
+          "REQ-004",
+          "REQ-006",
+          "REQ-010",
+          "REQ-011",
+          "REQ-015",
+          "REQ-018",
+          "REQ-110"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-004",
+        "summary": "Model Gateway",
+        "status": "accepted",
+        "source": "DEC-004",
+        "responsibilities": [
+          "Provider-neutral ModelPort adaptation",
+          "One structured ModelDecision",
+          "Deadline/cancellation/refusal handling",
+          "Redacted provider usage metadata"
+        ],
+        "prohibited_responsibilities": [
+          "Tool callbacks that await physical work",
+          "Speech submission",
+          "World mutation",
+          "Authoritative memory"
+        ],
+        "owned_state": [
+          "DAT-012"
+        ],
+        "requirements": [
+          "REQ-004",
+          "REQ-011",
+          "REQ-101",
+          "REQ-105"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-005",
+        "summary": "Action and Behavior Coordinator",
+        "status": "accepted",
+        "source": "Agent-world action boundary",
+        "responsibilities": [
+          "Closed Gate-A action/control unions",
+          "Validation, leases, and immediate dispatch",
+          "Asynchronous behavior lifecycle",
+          "Capability evidence evaluation",
+          "Priority stop/suspend/shutdown/emergency control"
+        ],
+        "prohibited_responsibilities": [
+          "Speech",
+          "Provider prompting",
+          "Raw server commands",
+          "Treating started or dispatch acknowledgement as success"
+        ],
+        "owned_state": [
+          "DAT-011",
+          "DAT-017"
+        ],
+        "requirements": [
+          "REQ-005",
+          "REQ-006",
+          "REQ-009",
+          "REQ-018",
+          "REQ-101"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-006",
+        "summary": "State Store",
+        "status": "accepted",
+        "source": "DEC-005",
+        "responsibilities": [
+          "Project-owned transaction/repository port",
+          "Gate-A SQLite WAL adapter",
+          "Minimal migrations and integrity",
+          "Safe backup/restore/reset",
+          "Stable-ID and event constraints"
+        ],
+        "prohibited_responsibilities": [
+          "Domain decisions",
+          "Implicit native binding selection",
+          "World authority",
+          "Comprehensive Gate-B governance in Gate A"
+        ],
+        "owned_state": [
+          "DAT-014",
+          "DAT-015",
+          "DAT-016",
+          "DAT-018"
+        ],
+        "requirements": [
+          "REQ-007",
+          "REQ-016",
+          "REQ-017",
+          "REQ-104",
+          "REQ-111"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-007",
+        "summary": "Continuity, Memory, and Belief Service",
+        "status": "accepted",
+        "source": "Agent-world memory profile",
+        "responsibilities": [
+          "Gate-A deterministic encounter promotion",
+          "Source-event retrieval and prompt assembly",
+          "Provenance-or-reject validation",
+          "Later belief/memory/relationship interpretation"
+        ],
+        "prohibited_responsibilities": [
+          "Settling world truth",
+          "Autonomous Gate-A significance scoring",
+          "Replacing source events with summaries",
+          "Cross-agent leakage"
+        ],
+        "owned_state": [
+          "DAT-006",
+          "DAT-007",
+          "DAT-008",
+          "DAT-018"
+        ],
+        "requirements": [
+          "REQ-007",
+          "REQ-008",
+          "REQ-109"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-008",
+        "summary": "Stimulus, Scheduler, and Budget Policy",
+        "status": "accepted",
+        "source": "DEC-006 DEC-007 DEC-009",
+        "responsibilities": [
+          "Closed Gate-A cognition trigger allowlist",
+          "Availability gate",
+          "Queue/coalescing/cooldown/overflow policy",
+          "Deterministic behavior timers",
+          "Later global cognition budgets"
+        ],
+        "prohibited_responsibilities": [
+          "Character prose",
+          "Physical execution",
+          "Autonomous idle wake before Gate B"
+        ],
+        "owned_state": [],
+        "requirements": [
+          "REQ-010",
+          "REQ-011",
+          "REQ-108"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-009",
+        "summary": "Causal Logs and Minimal Health",
+        "status": "accepted",
+        "source": "User observability requirement",
+        "responsibilities": [
+          "Redacted structured causal logs",
+          "Independent world/model/store/telemetry health",
+          "PASS/WARN/FAIL diagnosis",
+          "Gate-A evidence export and suppression telemetry"
+        ],
+        "prohibited_responsibilities": [
+          "Domain mutation",
+          "Hidden reasoning capture",
+          "General observability platform"
+        ],
+        "owned_state": [],
+        "requirements": [
+          "REQ-015",
+          "REQ-016",
+          "REQ-101",
+          "REQ-105"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-010",
+        "summary": "Local Operator Command Surface",
+        "status": "accepted",
+        "source": "Recovery and human-authority requirement",
+        "responsibilities": [
+          "Local status/pause/resume/stop/emergency-stop/shutdown",
+          "Safe backup/restore/reset and evidence commands",
+          "Later authenticated service seam"
+        ],
+        "prohibited_responsibilities": [
+          "Generic record replacement",
+          "Public remote administration",
+          "Raw SQL correction",
+          "Falsifying physical state"
+        ],
+        "owned_state": [
+          "DAT-013"
+        ],
+        "requirements": [
+          "REQ-016",
+          "REQ-018",
+          "REQ-019"
+        ],
+        "artifact": "04-components-and-topology.md"
+      },
+      {
+        "id": "CMP-011",
+        "summary": "Persona Package Adapter",
+        "status": "accepted",
+        "source": "DEC-011",
+        "responsibilities": [
+          "Read one versioned compiled Parallax/Lattice persona artifact",
+          "Return typed identity/voice/context plus ref/version/hash",
+          "Fail closed on missing or changed artifact"
+        ],
+        "prohibited_responsibilities": [
+          "Mutating persona packages",
+          "Owning runtime state",
+          "Provider-specific sessions"
+        ],
+        "owned_state": [],
+        "requirements": [
+          "REQ-004",
+          "REQ-111"
+        ],
+        "artifact": "04-components-and-topology.md"
+      }
+    ],
+    "interfaces": [
+      {
+        "id": "INT-001",
+        "summary": "Typed world observation stream",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": "CMP-001",
+        "to": "CMP-002",
+        "transport": "Async in-process event stream",
+        "contract": "WorldObservation union v2 in ART-017",
+        "failure_semantics": [
+          "Unknown adapter data is parsed before core",
+          "Critical connection/presence/behavior events cannot be silently dropped"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-002",
+        "summary": "Bounded fresh self/world query",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": [
+          "CMP-003",
+          "CMP-005"
+        ],
+        "to": "CMP-001",
+        "transport": "Cancellable async request response",
+        "contract": "WorldQueryRequest and WorldSnapshot union v2 in ART-017",
+        "failure_semantics": [
+          "Read timeout is typed",
+          "Expired or wrong-epoch snapshots cannot validate behavior"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-003",
+        "summary": "Bounded structured model decision",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": "CMP-003",
+        "to": "CMP-004",
+        "transport": "Cancellable async request response",
+        "contract": "CognitionRequest ModelDecision and ModelRunResult v2 in ART-017",
+        "failure_semantics": [
+          "LIM-GA-002 deadline",
+          "No automatic retry",
+          "Invalid/refused/late output cannot submit speech or action"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-004",
+        "summary": "Typed Gate-A action proposal",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": "CMP-003",
+        "to": "CMP-005",
+        "transport": "In-process command",
+        "contract": "GateAActionProposal ActionRequest and validation result v2 in ART-017",
+        "failure_semantics": [
+          "No speech member",
+          "At most one proposal per ModelDecision",
+          "Identity and authority are runtime-supplied"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-005",
+        "summary": "Validated behavior/control dispatch",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": "CMP-005",
+        "to": "CMP-001",
+        "transport": "Cancellable async command",
+        "contract": "BehaviorDispatchRequest ControlRequest and ImmediateDispatchResult v2 in ART-017",
+        "failure_semantics": [
+          "Return started plus BehaviorId immediately",
+          "Priority control bypasses ordinary actor queue",
+          "Started is not success"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-006",
+        "summary": "Asynchronous behavior and capability evidence events",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": "CMP-001",
+        "to": "CMP-005",
+        "transport": "Async result/event",
+        "contract": "BehaviorEvent and CapabilityEvidence unions v2 in ART-017",
+        "failure_semantics": [
+          "Progress/interruption/completion/timeout/cancellation/failure/unknown are typed",
+          "Evidence threshold is capability-specific"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-007",
+        "summary": "Scoped encounter retrieval and derived cognition seam",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": [
+          "CMP-003",
+          "CMP-010"
+        ],
+        "to": "CMP-007",
+        "transport": "In-process query command",
+        "contract": "EncounterQuery EncounterBundle and DerivedInterpretationProposal v2 in ART-017",
+        "failure_semantics": [
+          "Gate-A writes only deterministic encounter promotion",
+          "Unsourced or invisible interpretation rejects"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-008",
+        "summary": "Domain store and transaction port",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": [
+          "CMP-003",
+          "CMP-005",
+          "CMP-007",
+          "CMP-010"
+        ],
+        "to": "CMP-006",
+        "transport": "In-process repository port",
+        "contract": "GateAStorePort TransactionPort and StoreError v2 in ART-017",
+        "failure_semantics": [
+          "Binding-independent transactions",
+          "Integrity/migration failure prevents READY"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-009",
+        "summary": "Redacted causal telemetry and component health",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": [
+          "CMP-001",
+          "CMP-002",
+          "CMP-003",
+          "CMP-004",
+          "CMP-005",
+          "CMP-006",
+          "CMP-007",
+          "CMP-008",
+          "CMP-010",
+          "CMP-011"
+        ],
+        "to": "CMP-009",
+        "transport": "Non-blocking telemetry sink available to all components",
+        "contract": "CausalSignal and ComponentHealth v2 in ART-017",
+        "failure_semantics": [
+          "Debug loss is counted",
+          "Telemetry failure cannot block priority control"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-010",
+        "summary": "Typed local operator control",
+        "status": "accepted",
+        "source": "Revision 2 contract correction",
+        "from": "CMP-010",
+        "to": [
+          "CMP-003",
+          "CMP-005",
+          "CMP-006"
+        ],
+        "transport": "Loopback CLI HTTP or local IPC command",
+        "contract": "OperatorCommand and OperatorResult closed unions v2 in ART-017",
+        "failure_semantics": [
+          "No generic replacement/correction in Gate A",
+          "Destructive reset requires explicit world and epoch confirmation"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-011",
+        "summary": "One-attempt player-visible utterance submission",
+        "status": "accepted",
+        "source": "DEC-010",
+        "from": "CMP-003",
+        "to": "CMP-001",
+        "transport": "Cancellable async request response",
+        "contract": "ValidatedUtterance and UtteranceSubmissionResult v2 in ART-017",
+        "failure_semantics": [
+          "At most one submission attempt per UtteranceId without definitive environment deduplication",
+          "Unconfirmed result is unknown and never blindly retried"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      },
+      {
+        "id": "INT-012",
+        "summary": "Versioned persona package read",
+        "status": "accepted",
+        "source": "DEC-011",
+        "from": "CMP-003",
+        "to": "CMP-011",
+        "transport": "Read-only local port",
+        "contract": "PersonaPackageRequest and CompiledPersonaContext v1 in ART-017",
+        "failure_semantics": [
+          "Missing, malformed, or hash-mismatched package prevents live cognition",
+          "Runtime never writes the external package"
+        ],
+        "artifact": "contracts/platform-contracts.md"
+      }
+    ],
+    "data_entities": [
+      {
+        "id": "DAT-001",
+        "summary": "CharacterIdentityRecord: stable AgentId, display name, and Parallax/Lattice profile ref/version/hash",
+        "status": "accepted",
+        "source": "Character continuity model",
+        "owner": "CMP-003",
+        "lifecycle": "Created from a compiled persona package; versioned reference changes",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "private-local",
+        "migration": "Numbered SQL and versioned fixture data",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-002",
+        "summary": "AgentRuntimeState: orthogonal connection, availability, component health, and active run/action/behavior IDs",
+        "status": "accepted",
+        "source": "Agent lifecycle",
+        "owner": "CMP-003",
+        "lifecycle": "Projected from transitions; no exclusive DEGRADED lifecycle",
+        "persistence": "In-memory through WRK-003; durable transition events in WRK-004",
+        "sensitivity": "private-local",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-003",
+        "summary": "WorldSession: adapter connection interval and compatibility record",
+        "status": "accepted",
+        "source": "World adapter lifecycle",
+        "owner": "CMP-001",
+        "lifecycle": "Opened per connection; OFFLINE/DISCONNECTED semantics recorded separately",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "local",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-004",
+        "summary": "DurableEvent: complete typed player/NPC utterance, action, dispatch, behavior, evidence, lifecycle, and restart source event",
+        "status": "accepted",
+        "source": "Perception stream",
+        "owner": "CMP-002",
+        "lifecycle": "Append once; deduplicated; epoch-scoped; source records are never replaced by summaries",
+        "persistence": "SQLite durable append-only in Gate A",
+        "sensitivity": "may-contain-chat",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-005",
+        "summary": "PerceptionSnapshot: bounded expiring self/world view",
+        "status": "accepted",
+        "source": "Fresh world validation",
+        "owner": "CMP-002",
+        "lifecycle": "Captured, expires, superseded, rebuilt after restart",
+        "persistence": "In-memory Gate A; optional rebuildable persistence later",
+        "sensitivity": "local",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-006",
+        "summary": "BeliefRecord: subjective sourced proposition",
+        "status": "accepted",
+        "source": "Epistemic separation requirement",
+        "owner": "CMP-007",
+        "lifecycle": "Deferred Gate-B ACTIVE/CONTESTED/SUPERSEDED/RETRACTED",
+        "persistence": "Architectural seam only until Gate B",
+        "sensitivity": "private-default",
+        "migration": "Numbered SQL with provenance and visibility",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-007",
+        "summary": "EpisodicMemory: replaceable model-authored interpretation over source events",
+        "status": "accepted",
+        "source": "Durable continuity requirement",
+        "owner": "CMP-007",
+        "lifecycle": "Deferred; may be revised/rejected/archived and never replaces DAT-004 or DAT-018",
+        "persistence": "Deferred Gate-B SQLite record",
+        "sensitivity": "private-default",
+        "migration": "Numbered SQL with source constraints",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-008",
+        "summary": "RelationshipRecord: directional sourced social interpretation",
+        "status": "accepted",
+        "source": "Character depth profile",
+        "owner": "CMP-007",
+        "lifecycle": "Deferred versioned stream per agent and principal",
+        "persistence": "Deferred Gate-B SQLite record",
+        "sensitivity": "private-default",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-009",
+        "summary": "GoalPlanRecord: goals intentions and plans",
+        "status": "accepted",
+        "source": "Agent planning model",
+        "owner": "CMP-003",
+        "lifecycle": "Deferred; proposed state never grants authority",
+        "persistence": "Deferred Gate-B SQLite record",
+        "sensitivity": "private-local",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-010",
+        "summary": "ConversationUtterance: delivered player chat and NPC utterance proposal/delivery state",
+        "status": "accepted",
+        "source": "Conversation and continuity flow",
+        "owner": "CMP-003",
+        "lifecycle": "Player utterance is observed/delivered; NPC is proposed/validated/submitting/delivered/rejected/unknown",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "may-contain-personal-content",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-011",
+        "summary": "ActionAttempt: typed proposal validation dispatch and evidence-linked outcome",
+        "status": "accepted",
+        "source": "Action truth and recovery requirement",
+        "owner": "CMP-005",
+        "lifecycle": "PROPOSED/VALIDATING/REJECTED/VALIDATED/DISPATCHING/DISPATCHED/ACTIVE/COMPLETED/FAILED/INTERRUPTED/CANCELLED/TIMED_OUT/UNKNOWN",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "local-audit",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-012",
+        "summary": "ModelRun: bounded provider execution and structured ModelDecision",
+        "status": "accepted",
+        "source": "Model orchestration and cost telemetry",
+        "owner": "CMP-004",
+        "lifecycle": "QUEUED/ASSEMBLING/CALLING/PARSING/COMPLETED or typed terminal failure",
+        "persistence": "SQLite durable metadata in Gate A",
+        "sensitivity": "potentially-sensitive",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-013",
+        "summary": "OperatorAudit: comprehensive operator governance record",
+        "status": "accepted",
+        "source": "Human authority requirement",
+        "owner": "CMP-010",
+        "lifecycle": "Deferred append-only command/correction audit",
+        "persistence": "Deferred Gate B",
+        "sensitivity": "sensitive-audit",
+        "migration": "Numbered SQL",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-014",
+        "summary": "SchemaMetadata: migration ID checksum application and SQLite binding record",
+        "status": "accepted",
+        "source": "Migration safety",
+        "owner": "CMP-006",
+        "lifecycle": "Append once per applied Gate-A migration",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "internal",
+        "migration": "Bootstrap migration ledger",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-015",
+        "summary": "PrincipalIdentity: durable PrincipalId plus authorized roles and Minecraft UUID/username/session-entity aliases",
+        "status": "accepted",
+        "source": "REQ-111",
+        "owner": "CMP-006",
+        "lifecycle": "PrincipalId is stable; aliases are time-bounded and session entity IDs are never authorization authority",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "local identity",
+        "migration": "Minimal WRK-004 migration",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-016",
+        "summary": "WorldIdentity: stable WorldId and monotonic WorldEpoch",
+        "status": "accepted",
+        "source": "REQ-111",
+        "owner": "CMP-006",
+        "lifecycle": "WorldId survives compatible restart; incompatible replacement/reset/restore creates the next epoch before new events",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "local",
+        "migration": "Minimal WRK-004 migration",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-017",
+        "summary": "BehaviorRun: long-running follow lease and asynchronous event lifecycle",
+        "status": "accepted",
+        "source": "INV-017",
+        "owner": "CMP-005",
+        "lifecycle": "REQUESTED/DISPATCHING/ACTIVE then COMPLETED/FAILED/INTERRUPTED/CANCELLED/TIMED_OUT/UNKNOWN",
+        "persistence": "SQLite durable in Gate A",
+        "sensitivity": "local audit",
+        "migration": "Minimal WRK-004 migration",
+        "artifact": "03-domain-state-data.md"
+      },
+      {
+        "id": "DAT-018",
+        "summary": "EncounterRecord: deterministic grouping of complete source events for recall",
+        "status": "accepted",
+        "source": "DEC-012",
+        "owner": "CMP-007",
+        "lifecycle": "Promoted only by explicit remember request or designated acceptance interaction; immutable source membership with superseding metadata only",
+        "persistence": "SQLite durable plus rebuildable FTS in Gate A",
+        "sensitivity": "may contain conversation",
+        "migration": "Minimal WRK-004 migration",
+        "artifact": "03-domain-state-data.md"
+      }
+    ],
+    "flows": [
+      {
+        "id": "FLW-001",
+        "summary": "Start, connect, synchronize, and become ACTIVE or SUSPENDED",
+        "status": "accepted",
+        "source": "Vertical slice startup",
+        "actors": [
+          "ACT-002",
+          "ACT-003",
+          "ACT-004"
+        ],
+        "preconditions": [
+          "Doctor has no FAIL",
+          "Compatibility record exists",
+          "Store integrity passes"
+        ],
+        "steps": [
+          "Set connection CONNECTING",
+          "Join and map world/principal IDs",
+          "Set SYNCING and capture a fresh snapshot",
+          "Set READY",
+          "Set ACTIVE only if authorized player is observed; otherwise SUSPENDED"
+        ],
+        "failure_branches": [
+          "Join failure -> DISCONNECTED",
+          "Invalid store/profile -> FAULTED",
+          "Operator shutdown -> OFFLINE"
+        ],
+        "components": [
+          "CMP-001",
+          "CMP-003",
+          "CMP-006",
+          "CMP-009"
+        ],
+        "interfaces": [
+          "INT-001",
+          "INT-002",
+          "INT-008",
+          "INT-009"
+        ],
+        "requirements": [
+          "REQ-002",
+          "REQ-007",
+          "REQ-017",
+          "REQ-018"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-002",
+        "summary": "Addressed chat produces one model decision, one utterance attempt, and optional asynchronous action",
+        "status": "accepted",
+        "source": "Defining proof",
+        "actors": [
+          "ACT-001",
+          "ACT-003",
+          "ACT-004",
+          "ACT-005"
+        ],
+        "preconditions": [
+          "connection READY",
+          "availability ACTIVE",
+          "authorized addressed chat",
+          "no active suppression"
+        ],
+        "steps": [
+          "Persist/normalize player utterance stimulus",
+          "Actor assembles bounded labelled context",
+          "ModelPort returns one ModelDecision within LIM-GA-002",
+          "Validate decision and assign UtteranceId/ActionId",
+          "Persist utterance intent before one independent submission attempt",
+          "Validate optional action",
+          "Dispatch follow and receive started plus BehaviorId within LIM-GA-003",
+          "Release cognition run and actor mailbox",
+          "Process later BehaviorEvents independently; enqueue later cognition only if interpretation is designated"
+        ],
+        "failure_branches": [
+          "Invalid decision -> rejected",
+          "Unconfirmed utterance -> unknown without retry",
+          "Rejected action does not block valid utterance",
+          "Behavior failure is a later event, never retroactive model success"
+        ],
+        "components": [
+          "CMP-001",
+          "CMP-002",
+          "CMP-003",
+          "CMP-004",
+          "CMP-005",
+          "CMP-007",
+          "CMP-008",
+          "CMP-009"
+        ],
+        "interfaces": [
+          "INT-001",
+          "INT-002",
+          "INT-003",
+          "INT-004",
+          "INT-005",
+          "INT-006",
+          "INT-007",
+          "INT-009"
+        ],
+        "requirements": [
+          "REQ-003",
+          "REQ-004",
+          "REQ-005",
+          "REQ-006",
+          "REQ-015"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-003",
+        "summary": "Fail, interrupt, or remain uncertain honestly",
+        "status": "accepted",
+        "source": "Action failure proof",
+        "actors": [
+          "ACT-003",
+          "ACT-004"
+        ],
+        "preconditions": [
+          "A run, attempt, utterance, or behavior exists"
+        ],
+        "steps": [
+          "Classify last known phase",
+          "Apply capability evidence rule",
+          "Record failed/interrupted/cancelled/timed_out/unknown",
+          "Cancel lease through priority control",
+          "Reconcile from a fresh same-epoch observation when possible"
+        ],
+        "failure_branches": [
+          "Insufficient evidence remains unknown",
+          "World epoch changed -> do not reconcile across epoch"
+        ],
+        "components": [
+          "CMP-001",
+          "CMP-003",
+          "CMP-005",
+          "CMP-007"
+        ],
+        "interfaces": [
+          "INT-002",
+          "INT-004",
+          "INT-005",
+          "INT-006",
+          "INT-007"
+        ],
+        "requirements": [
+          "REQ-005",
+          "REQ-008",
+          "REQ-009",
+          "REQ-018"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-004",
+        "summary": "Shutdown, restart, retrieve, and use event-grounded continuity",
+        "status": "accepted",
+        "source": "Defining continuity proof",
+        "actors": [
+          "ACT-001",
+          "ACT-002",
+          "ACT-003",
+          "ACT-004"
+        ],
+        "preconditions": [
+          "A deterministic encounter exists",
+          "Backup or database integrity is valid"
+        ],
+        "steps": [
+          "Priority-stop active work",
+          "Flush committed events and close runtime/server",
+          "On later start create a new WorldSession in the same compatible epoch",
+          "Mark unfinished work interrupted/unknown and reconcile",
+          "Retrieve encounter by principal/world/epoch/context",
+          "Provide source-labelled encounter context to cognition",
+          "Character refers naturally and conservatively to the prior event"
+        ],
+        "failure_branches": [
+          "No matching encounter -> do not invent recall",
+          "Incompatible world -> new epoch and no implicit cross-epoch current-world claim"
+        ],
+        "components": [
+          "CMP-001",
+          "CMP-003",
+          "CMP-006",
+          "CMP-007"
+        ],
+        "interfaces": [
+          "INT-002",
+          "INT-003",
+          "INT-007",
+          "INT-008"
+        ],
+        "requirements": [
+          "REQ-007",
+          "REQ-008",
+          "REQ-017",
+          "REQ-018"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-005",
+        "summary": "Model provider degrades without corrupting embodiment",
+        "status": "accepted",
+        "source": "Failure isolation and cost",
+        "actors": [
+          "ACT-003",
+          "ACT-004",
+          "ACT-005"
+        ],
+        "preconditions": [
+          "World connection may remain READY"
+        ],
+        "steps": [
+          "Set model health UNAVAILABLE or DEGRADED",
+          "Fail current cognition within deadline",
+          "Do not submit unparsed output",
+          "Keep deterministic presence and safety control",
+          "Allow later new player stimulus only after health recovers"
+        ],
+        "failure_branches": [
+          "No hidden retry",
+          "Store failure separately affects readiness"
+        ],
+        "components": [
+          "CMP-003",
+          "CMP-004",
+          "CMP-008",
+          "CMP-009"
+        ],
+        "interfaces": [
+          "INT-003",
+          "INT-009"
+        ],
+        "requirements": [
+          "REQ-009",
+          "REQ-010",
+          "REQ-011",
+          "REQ-018"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-006",
+        "summary": "Preserve future multi-agent knowledge boundaries",
+        "status": "accepted",
+        "source": "Multi-agent coherence gate",
+        "actors": [
+          "ACT-003"
+        ],
+        "preconditions": [
+          "Gate A passed",
+          "Second agent work active"
+        ],
+        "steps": [
+          "Query as viewer AgentId",
+          "Return only visible/source-authorized records",
+          "Transmit via explicit event",
+          "Create receiver-owned interpretation"
+        ],
+        "failure_branches": [
+          "Unauthorized source -> reject"
+        ],
+        "components": [
+          "CMP-002",
+          "CMP-003",
+          "CMP-007"
+        ],
+        "interfaces": [
+          "INT-001",
+          "INT-003",
+          "INT-007"
+        ],
+        "requirements": [
+          "REQ-012",
+          "REQ-013",
+          "REQ-014"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-007",
+        "summary": "Resume development from evidence",
+        "status": "accepted",
+        "source": "User project-resumption request",
+        "actors": [
+          "ACT-002",
+          "ACT-006"
+        ],
+        "preconditions": [
+          "Blueprint bundle and repository are available"
+        ],
+        "steps": [
+          "Run structural and semantic guards",
+          "Read 10-resume-state.md",
+          "Inspect repo and previous checkpoint",
+          "Classify exact completed/partial/unstarted state",
+          "Execute one micro-step only",
+          "Write proving artifact and update implementation status"
+        ],
+        "failure_branches": [
+          "Contradiction -> stop and reconcile",
+          "Missing evidence -> do not infer completion"
+        ],
+        "components": [
+          "CMP-010"
+        ],
+        "interfaces": [
+          "INT-010"
+        ],
+        "requirements": [
+          "REQ-019",
+          "REQ-107"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-008",
+        "summary": "Suspend on absence and resume only from observed return",
+        "status": "accepted",
+        "source": "DEC-007",
+        "actors": [
+          "ACT-001",
+          "ACT-003",
+          "ACT-004"
+        ],
+        "preconditions": [
+          "Mineflayer connection READY",
+          "Authorized PrincipalId known"
+        ],
+        "steps": [
+          "Observe authorized player leave",
+          "Set availability SUSPENDED immediately",
+          "Priority-cancel cognition, movement, actions, and behavior",
+          "Continue only authorized-player presence observation, connection health, and priority safety/operator control",
+          "Make zero model calls",
+          "Observe the same PrincipalId return through the connected adapter",
+          "Resync snapshot",
+          "Set ACTIVE"
+        ],
+        "failure_branches": [
+          "Unexpected link loss -> connection DISCONNECTED and availability SUSPENDED; no return detection claim",
+          "Operator pause -> PAUSED",
+          "Operator shutdown -> OFFLINE"
+        ],
+        "components": [
+          "CMP-001",
+          "CMP-003",
+          "CMP-008"
+        ],
+        "interfaces": [
+          "INT-001",
+          "INT-003",
+          "INT-005",
+          "INT-006"
+        ],
+        "requirements": [
+          "REQ-010",
+          "REQ-018"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-009",
+        "summary": "High-priority stop and emergency stop",
+        "status": "accepted",
+        "source": "Concurrency proof",
+        "actors": [
+          "ACT-001",
+          "ACT-002",
+          "ACT-003"
+        ],
+        "preconditions": [
+          "A behavior may or may not be active"
+        ],
+        "steps": [
+          "Accept typed control request outside ordinary actor mailbox",
+          "Cancel current pathfinder goal and movement controls",
+          "Emit dispatch acknowledgement",
+          "Observe stopped client state",
+          "Emit behavior interruption/completion evidence",
+          "Release lease"
+        ],
+        "failure_branches": [
+          "No active behavior -> idempotent completed",
+          "Unconfirmed stop -> unknown and operator warning"
+        ],
+        "components": [
+          "CMP-002",
+          "CMP-003",
+          "CMP-005",
+          "CMP-008"
+        ],
+        "interfaces": [
+          "INT-001",
+          "INT-003",
+          "INT-004",
+          "INT-005",
+          "INT-006"
+        ],
+        "requirements": [
+          "REQ-009",
+          "REQ-011",
+          "REQ-012"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-010",
+        "summary": "Run progressive compatibility spike and production pin",
+        "status": "accepted",
+        "source": "Human authority and recovery",
+        "actors": [
+          "ACT-002",
+          "ACT-006"
+        ],
+        "preconditions": [
+          "Clean/disposable location",
+          "Primary sources re-read"
+        ],
+        "steps": [
+          "Run progressive gates in order",
+          "Record every exact version/URL/date/command/result",
+          "Use narrow fallback when a gate fails",
+          "Stop before core expansion if embodiment remains red",
+          "Copy only the compatibility record and decisions into production"
+        ],
+        "failure_branches": [
+          "Join-only pass does not retire risk",
+          "Failed spike is discarded without damaging prior checkpoint"
+        ],
+        "components": [
+          "CMP-006",
+          "CMP-007",
+          "CMP-010"
+        ],
+        "interfaces": [
+          "INT-007",
+          "INT-008",
+          "INT-010"
+        ],
+        "requirements": [
+          "REQ-016",
+          "REQ-017",
+          "REQ-018",
+          "REQ-019"
+        ],
+        "artifact": "06-runtime-flows.md"
+      },
+      {
+        "id": "FLW-011",
+        "summary": "Reset, restore, and advance WorldEpoch safely",
+        "status": "accepted",
+        "source": "REQ-111",
+        "actors": [
+          "ACT-002",
+          "ACT-004"
+        ],
+        "preconditions": [
+          "Explicit WorldId target",
+          "Verified backup or reset fixture",
+          "Runtime stopped"
+        ],
+        "steps": [
+          "Validate target and confirmation token",
+          "Back up current database",
+          "Restore or reset to a separate path first",
+          "Compare world fingerprint/history compatibility",
+          "Keep epoch only for compatible continuation; otherwise allocate next WorldEpoch",
+          "Start through FLW-001"
+        ],
+        "failure_branches": [
+          "Ambiguous target -> stop",
+          "Integrity failure -> preserve original and report FAIL",
+          "Epoch collision -> FAULTED"
+        ],
+        "artifact": "06-runtime-flows.md"
+      }
+    ],
+    "verifications": [
+      {
+        "id": "VER-001",
+        "summary": "Verify Minecraft-first dependency seams without portability overclaim",
+        "status": "accepted",
+        "source": "REQ-001 acceptance",
+        "target": "REQ-001",
+        "method": "Static import boundary plus fake port contract tests; scan claims",
+        "evidence": "Boundary report and zero Gate-A portability assertions",
+        "command": "npm run check && npm run test:contract"
+      },
+      {
+        "id": "VER-002",
+        "summary": "Verify empirical NPC compatibility gates",
+        "status": "accepted",
+        "source": "REQ-002 acceptance",
+        "target": "REQ-002",
+        "method": "SPIKE-000 and WRK-002 progressive live smoke",
+        "evidence": "Dated compatibility record and logs beyond join",
+        "command": "npm run test:integration -- minecraft-connection"
+      },
+      {
+        "id": "VER-003",
+        "summary": "Verify bounded closed-union perception",
+        "status": "accepted",
+        "source": "REQ-003 acceptance",
+        "target": "REQ-003",
+        "method": "Fixture/property tests and ambient suppression soak",
+        "evidence": "Accepted/rejected counts with reasons",
+        "command": "npm run test:contract -- world"
+      },
+      {
+        "id": "VER-004",
+        "summary": "Verify one in-character utterance delivery path",
+        "status": "accepted",
+        "source": "REQ-004 acceptance",
+        "target": "REQ-004",
+        "method": "Fake/live conversation and duplicate-attempt fault tests",
+        "evidence": "UtteranceId trace with at most one attempt",
+        "command": "npm run test:e2e:live -- conversation"
+      },
+      {
+        "id": "VER-005",
+        "summary": "Verify Gate-A action/control union",
+        "status": "accepted",
+        "source": "REQ-005 acceptance",
+        "target": "REQ-005",
+        "method": "Schema exhaustiveness and adversarial validation",
+        "evidence": "No speech/item/build/combat member; rejects recorded",
+        "command": "npm run test:contract -- actions"
+      },
+      {
+        "id": "VER-006",
+        "summary": "Verify causal asynchronous conversation-action loop",
+        "status": "accepted",
+        "source": "REQ-006 acceptance",
+        "target": "REQ-006",
+        "method": "Live follow/stop plus trace join",
+        "evidence": "Decision, ActionId, BehaviorId and later evidence chain",
+        "command": "npm run test:e2e:live -- conversation-action"
+      },
+      {
+        "id": "VER-007",
+        "summary": "Verify event-grounded restart continuity",
+        "status": "accepted",
+        "source": "REQ-007 acceptance",
+        "target": "REQ-007",
+        "method": "Full server/runtime stop, restart, retrieval, and live dialogue",
+        "evidence": "Source events, encounter query, and owner-rated natural recall",
+        "command": "npm run test:integration -- continuity"
+      },
+      {
+        "id": "VER-008",
+        "summary": "Verify epistemic type separation",
+        "status": "accepted",
+        "source": "REQ-008 acceptance",
+        "target": "REQ-008",
+        "method": "Type/schema/context snapshot tests",
+        "evidence": "Separate fact/observation/belief/event/interpretation sections",
+        "command": "npm run test:unit -- memory"
+      },
+      {
+        "id": "VER-009",
+        "summary": "Verify honest action behavior and utterance uncertainty",
+        "status": "accepted",
+        "source": "REQ-009 acceptance",
+        "target": "REQ-009",
+        "method": "Phase-by-phase fault matrix",
+        "evidence": "Distinct dispatched/active/terminal/unknown records",
+        "command": "npm run test:simulation -- faults"
+      },
+      {
+        "id": "VER-010",
+        "summary": "Verify connected absence suspension",
+        "status": "accepted",
+        "source": "REQ-010 acceptance",
+        "target": "REQ-010",
+        "method": "Presence leave/return, disconnect, restart, and shutdown tests",
+        "evidence": "Zero absence calls; return only from READY observation",
+        "command": "npm run test:integration -- lifecycle"
+      },
+      {
+        "id": "VER-011",
+        "summary": "Verify deterministic Gate-A gating",
+        "status": "accepted",
+        "source": "REQ-011 acceptance",
+        "target": "REQ-011",
+        "method": "Ambient movement/entity/proximity soak",
+        "evidence": "Zero model calls and suppression reasons",
+        "command": "npm run test:simulation -- scale-10"
+      },
+      {
+        "id": "VER-012",
+        "summary": "Verify deliberate two-then-ten scale",
+        "status": "accepted",
+        "source": "REQ-012 acceptance",
+        "target": "REQ-012",
+        "method": "Deferred Gate-B load gate",
+        "evidence": "Two-agent evidence precedes ten-agent evidence",
+        "command": "npm run benchmark:scale-10"
+      },
+      {
+        "id": "VER-013",
+        "summary": "Verify per-agent knowledge boundaries",
+        "status": "accepted",
+        "source": "REQ-013 acceptance",
+        "target": "REQ-013",
+        "method": "Deferred adversarial two-agent fixtures",
+        "evidence": "No unauthorized retrieval",
+        "command": "npm run test:unit -- knowledge-boundary"
+      },
+      {
+        "id": "VER-014",
+        "summary": "Verify separate rich character state",
+        "status": "accepted",
+        "source": "REQ-014 acceptance",
+        "target": "REQ-014",
+        "method": "Deferred schema/behavior suite",
+        "evidence": "Independent directional state",
+        "command": "npm run test:simulation -- two-agent"
+      },
+      {
+        "id": "VER-015",
+        "summary": "Verify causal log completeness",
+        "status": "accepted",
+        "source": "REQ-015 acceptance",
+        "target": "REQ-015",
+        "method": "Export one defining trace and validate required IDs",
+        "evidence": "Machine-readable manifest plus human-readable timeline",
+        "command": "npm run test:integration -- action-loop"
+      },
+      {
+        "id": "VER-016",
+        "summary": "Verify owner-safe Gate-A command surface",
+        "status": "accepted",
+        "source": "REQ-016 acceptance",
+        "target": "REQ-016",
+        "method": "Command integration tests on temporary paths",
+        "evidence": "PASS/WARN/FAIL doctor and safe operation transcripts",
+        "command": "npm run test:integration -- operator"
+      },
+      {
+        "id": "VER-017",
+        "summary": "Verify minimal migrations backup restore and reset",
+        "status": "accepted",
+        "source": "REQ-017 acceptance",
+        "target": "REQ-017",
+        "method": "Empty/repeat/integrity/backup/separate-restore/reset tests",
+        "evidence": "Checksums and original-data preservation",
+        "command": "npm run test:integration -- sqlite"
+      },
+      {
+        "id": "VER-018",
+        "summary": "Verify bounded recovery",
+        "status": "accepted",
+        "source": "REQ-018 acceptance",
+        "target": "REQ-018",
+        "method": "Model timeout, link loss, process stop, stale behavior, restart tests",
+        "evidence": "Typed terminal/unknown/reconciled outcomes",
+        "command": "npm run test:simulation -- faults"
+      },
+      {
+        "id": "VER-019",
+        "summary": "Verify micro-step project resumption",
+        "status": "accepted",
+        "source": "REQ-019 acceptance",
+        "target": "REQ-019",
+        "method": "Fresh-agent handoff drill",
+        "evidence": "Exact next command selected from artifacts",
+        "command": "npm run architecture:validate"
+      },
+      {
+        "id": "VER-020",
+        "summary": "Verify authoritative item capabilities",
+        "status": "accepted",
+        "source": "REQ-020 acceptance",
+        "target": "REQ-020",
+        "method": "Deferred Gate-B mutation suite",
+        "evidence": "Capability-specific ownership/transfer evidence",
+        "command": "npm run test:integration -- item-actions-crash"
+      },
+      {
+        "id": "VER-021",
+        "summary": "Verify action tags cannot bypass boundaries",
+        "status": "deferred",
+        "source": "REQ-021 acceptance",
+        "target": "REQ-021",
+        "method": "Deferred threat model and fake dispatch",
+        "evidence": "No script executor or alternate authority",
+        "command": "Defined after QST-003"
+      },
+      {
+        "id": "VER-101",
+        "summary": "Verify coherent time budgets",
+        "status": "accepted",
+        "source": "REQ-101 acceptance",
+        "target": "REQ-101",
+        "method": "Fake-clock unit tests and live p95 sample",
+        "evidence": "6000 < 8000 with 2000 margin; dispatch/control SLOs",
+        "command": "npm run benchmark:reference"
+      },
+      {
+        "id": "VER-102",
+        "summary": "Verify future capacity/backpressure",
+        "status": "accepted",
+        "source": "REQ-102 acceptance",
+        "target": "REQ-102",
+        "method": "Deferred measured load suite",
+        "evidence": "Limits selected after two-agent evidence",
+        "command": "npm run benchmark:scale-10"
+      },
+      {
+        "id": "VER-103",
+        "summary": "Verify future multi-level budgets",
+        "status": "accepted",
+        "source": "REQ-103 acceptance",
+        "target": "REQ-103",
+        "method": "Deferred deterministic exhaustion suite",
+        "evidence": "Run/session/daily gates",
+        "command": "npm run test:simulation -- budgets"
+      },
+      {
+        "id": "VER-104",
+        "summary": "Verify Gate-A durability shutdown restart and restore",
+        "status": "accepted",
+        "source": "REQ-104 acceptance",
+        "target": "REQ-104",
+        "method": "Kill/clean stop/restart/restore on temp copy",
+        "evidence": "No fabricated completion and verified integrity",
+        "command": "npm run benchmark:reference"
+      },
+      {
+        "id": "VER-105",
+        "summary": "Verify secrets command and network boundaries",
+        "status": "accepted",
+        "source": "REQ-105 acceptance",
+        "target": "REQ-105",
+        "method": "Static scans, redaction fixtures, listener probe",
+        "evidence": "Zero leaked credential or raw command route",
+        "command": "npm run security:check"
+      },
+      {
+        "id": "VER-106",
+        "summary": "Verify deterministic network-free defaults",
+        "status": "accepted",
+        "source": "REQ-106 acceptance",
+        "target": "REQ-106",
+        "method": "Run default suite twice with network blocked",
+        "evidence": "Identical pass with zero external calls",
+        "command": "npm run test:unit && npm run test:contract"
+      },
+      {
+        "id": "VER-107",
+        "summary": "Verify second real adapter before portability claim",
+        "status": "accepted",
+        "source": "REQ-107 acceptance",
+        "target": "REQ-107",
+        "method": "Deferred WRK-014 conformance and claim review",
+        "evidence": "Second materially different adapter evidence",
+        "command": "npm run test:contract"
+      },
+      {
+        "id": "VER-201",
+        "summary": "Verify world physical authority",
+        "status": "accepted",
+        "source": "INV-001 proof",
+        "target": "INV-001",
+        "method": "Reject external physical write and reconcile stale projection",
+        "evidence": "tests/contract/world-authority",
+        "command": "npm run test:contract -- world"
+      },
+      {
+        "id": "VER-202",
+        "summary": "Verify narration has no world authority",
+        "status": "accepted",
+        "source": "INV-002 proof",
+        "target": "INV-002",
+        "method": "Inject action-like tags and claims into speech",
+        "evidence": "tests/contract/narration-authority",
+        "command": "npm run test:contract -- actions"
+      },
+      {
+        "id": "VER-203",
+        "summary": "Verify capability-specific evidence thresholds",
+        "status": "accepted",
+        "source": "INV-003 proof",
+        "target": "INV-003",
+        "method": "Evidence matrix tests",
+        "evidence": "Movement accepts client_observed; authoritative mutation does not",
+        "command": "npm run test:contract -- actions"
+      },
+      {
+        "id": "VER-204",
+        "summary": "Verify one-agent run scope",
+        "status": "accepted",
+        "source": "INV-004 proof",
+        "target": "INV-004",
+        "method": "Cross-wire agent and run IDs",
+        "evidence": "tests/unit/context-isolation",
+        "command": "npm run test:unit -- context"
+      },
+      {
+        "id": "VER-205",
+        "summary": "Verify explicit knowledge transmission",
+        "status": "accepted",
+        "source": "INV-005 proof",
+        "target": "INV-005",
+        "method": "Query B for A-private fact before and after speech transmission",
+        "evidence": "evidence/WRK-010/knowledge-boundary-report.json",
+        "command": "npm run test:unit -- knowledge-boundary"
+      },
+      {
+        "id": "VER-206",
+        "summary": "Verify one exclusive behavior lease",
+        "status": "accepted",
+        "source": "INV-006 proof",
+        "target": "INV-006",
+        "method": "Concurrency/preemption tests",
+        "evidence": "No overlapping exclusive behavior; stop bypasses queue",
+        "command": "npm run test:unit -- actions"
+      },
+      {
+        "id": "VER-207",
+        "summary": "Verify event utterance action and behavior idempotency",
+        "status": "accepted",
+        "source": "INV-007 proof",
+        "target": "INV-007",
+        "method": "Duplicate/restart injection",
+        "evidence": "No duplicate records, speech attempts, or effects",
+        "command": "npm run test:integration -- sqlite"
+      },
+      {
+        "id": "VER-208",
+        "summary": "Verify migration immutability",
+        "status": "accepted",
+        "source": "INV-008 proof",
+        "target": "INV-008",
+        "method": "Change applied checksum and restart",
+        "evidence": "evidence/WRK-003/migration-test-report.txt",
+        "command": "npm run test:integration -- sqlite"
+      },
+      {
+        "id": "VER-209",
+        "summary": "Verify forbidden model capabilities are absent",
+        "status": "accepted",
+        "source": "INV-009 proof",
+        "target": "INV-009",
+        "method": "Prompt and schema tests for console shell file network and credentials",
+        "evidence": "evidence/WRK-008/security-report.txt",
+        "command": "npm run security:check"
+      },
+      {
+        "id": "VER-210",
+        "summary": "Verify stable Agent/Principal/World/Epoch identity",
+        "status": "accepted",
+        "source": "INV-010 proof",
+        "target": "INV-010",
+        "method": "Alias/restart/reset/restore fixtures",
+        "evidence": "Internal IDs and epoch behavior match contracts",
+        "command": "npm run test:integration -- continuity"
+      },
+      {
+        "id": "VER-211",
+        "summary": "Verify SUSPENDED suppression",
+        "status": "accepted",
+        "source": "INV-011 proof",
+        "target": "INV-011",
+        "method": "Absence and noisy-world soak",
+        "evidence": "Zero cognition/model/behavior activity",
+        "command": "npm run test:simulation -- faults"
+      },
+      {
+        "id": "VER-212",
+        "summary": "Verify orthogonal health and lifecycle",
+        "status": "accepted",
+        "source": "INV-012 proof",
+        "target": "INV-012",
+        "method": "State-model transition tests",
+        "evidence": "Dependency degradation never becomes exclusive agent state",
+        "command": "npm run test:integration -- lifecycle"
+      },
+      {
+        "id": "VER-213",
+        "summary": "Verify provenance-or-reject continuity discipline",
+        "status": "accepted",
+        "source": "INV-013 proof",
+        "target": "INV-013",
+        "method": "Unsourced/invisible/contradictory fixture tests",
+        "evidence": "Rejects plus retained complete sources",
+        "command": "npm run test:integration -- continuity"
+      },
+      {
+        "id": "VER-214",
+        "summary": "Verify future typed operator correction",
+        "status": "accepted",
+        "source": "INV-014 proof",
+        "target": "INV-014",
+        "method": "Deferred Gate-B correction suite",
+        "evidence": "No generic replacement contract",
+        "command": "npm run test:integration -- operator"
+      },
+      {
+        "id": "VER-215",
+        "summary": "Verify deferred portability conformance",
+        "status": "accepted",
+        "source": "INV-015 proof",
+        "target": "INV-015",
+        "method": "Deferred second-adapter review",
+        "evidence": "No Gate-A toy-adapter proof claim",
+        "command": "npm run test:contract -- world"
+      },
+      {
+        "id": "VER-108",
+        "summary": "Verify Gate-A stimulus suppression",
+        "status": "accepted",
+        "source": "REQ-108",
+        "target": "REQ-108",
+        "method": "Addressed/non-addressed, duplicate, coalescing, cooldown, overflow, ambient, and suspended tests",
+        "evidence": "Trigger/suppression reason counts and zero forbidden calls",
+        "artifact": "08-verification.md"
+      },
+      {
+        "id": "VER-109",
+        "summary": "Verify deterministic encounter promotion",
+        "status": "accepted",
+        "source": "REQ-109",
+        "target": "REQ-109",
+        "method": "Explicit-remember, designated-acceptance, and ordinary-chat fixtures",
+        "evidence": "Only two eligible reasons create EncounterRecord",
+        "artifact": "08-verification.md"
+      },
+      {
+        "id": "VER-110",
+        "summary": "Verify the LIM-GA-014 consecutive defining live proofs and owner judgment",
+        "status": "accepted",
+        "source": "REQ-110",
+        "target": "REQ-110",
+        "method": "LIM-GA-014 full meet-act-suspend-stop-restart-recall repetitions",
+        "evidence": "One verified manifest, machine check set, media index, and signed owner experiential rubric per required repetition",
+        "artifact": "08-verification.md"
+      },
+      {
+        "id": "VER-111",
+        "summary": "Verify principal and world epoch semantics",
+        "status": "accepted",
+        "source": "REQ-111",
+        "target": "REQ-111",
+        "method": "UUID/username/session alias plus compatible/incompatible restart/reset/restore matrix",
+        "evidence": "Stable PrincipalId/WorldId and monotonic epoch report",
+        "artifact": "08-verification.md"
+      },
+      {
+        "id": "VER-216",
+        "summary": "Verify single speech ownership",
+        "status": "accepted",
+        "source": "INV-016",
+        "target": "INV-016",
+        "method": "Static banned-path scan and duplicate fault suite",
+        "evidence": "Only INT-011 submits and each UtteranceId has <=1 attempt",
+        "artifact": "08-verification.md"
+      },
+      {
+        "id": "VER-217",
+        "summary": "Verify actor never awaits behavior duration",
+        "status": "accepted",
+        "source": "INV-017",
+        "target": "INV-017",
+        "method": "Fake long follow while processing stop and later addressed chat",
+        "evidence": "Immediate started result, free mailbox, and priority stop latency",
+        "artifact": "08-verification.md"
+      },
+      {
+        "id": "VER-218",
+        "summary": "Verify no invented offline time or events",
+        "status": "accepted",
+        "source": "INV-018",
+        "target": "INV-018",
+        "method": "Clock-gap restart fixtures",
+        "evidence": "Explicit offline gap with no subjective elapsed-time event",
+        "artifact": "08-verification.md"
+      }
+    ],
+    "work_items": [
+      {
+        "id": "WRK-001",
+        "summary": "Build the thin production scaffold, closed contracts, fakes, in-memory IDs, and minimal causal loop",
+        "status": "accepted",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [],
+        "requirements": [
+          "REQ-001",
+          "REQ-008",
+          "REQ-009",
+          "REQ-015",
+          "REQ-019",
+          "REQ-106",
+          "REQ-111"
+        ],
+        "affected_paths": [
+          "work-items/WRK-001.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-001.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-001.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-001.md",
+        "classification": "required now"
+      },
+      {
+        "id": "WRK-002",
+        "summary": "Empirically pin the production stack and prove bot join, presence, deterministic chat, perception, movement, and stop",
+        "status": "accepted",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-001"
+        ],
+        "requirements": [
+          "REQ-002",
+          "REQ-003",
+          "REQ-105"
+        ],
+        "affected_paths": [
+          "work-items/WRK-002.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-002.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-002.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-002.md",
+        "classification": "required now"
+      },
+      {
+        "id": "WRK-003",
+        "summary": "Add one bounded structured character decision, one utterance path, and asynchronous follow/stop",
+        "status": "accepted",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-001",
+          "WRK-002"
+        ],
+        "requirements": [
+          "REQ-004",
+          "REQ-005",
+          "REQ-006",
+          "REQ-009",
+          "REQ-010",
+          "REQ-011",
+          "REQ-018",
+          "REQ-101",
+          "REQ-108"
+        ],
+        "affected_paths": [
+          "work-items/WRK-003.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-003.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-003.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-003.md",
+        "classification": "required now"
+      },
+      {
+        "id": "WRK-004",
+        "summary": "Add minimal SQLite events, identities, encounter, shutdown, restart, reconciliation, retrieval, backup, restore, and reset",
+        "status": "accepted",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-002",
+          "WRK-003"
+        ],
+        "requirements": [
+          "REQ-007",
+          "REQ-008",
+          "REQ-015",
+          "REQ-016",
+          "REQ-017",
+          "REQ-104",
+          "REQ-109",
+          "REQ-111"
+        ],
+        "affected_paths": [
+          "work-items/WRK-004.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-004.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-004.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-004.md",
+        "classification": "required now"
+      },
+      {
+        "id": "WRK-005",
+        "summary": "Run the LIM-GA-014 consecutive live defining proofs and obtain owner experiential approval",
+        "status": "accepted",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-004"
+        ],
+        "requirements": [
+          "REQ-002",
+          "REQ-004",
+          "REQ-006",
+          "REQ-007",
+          "REQ-010",
+          "REQ-015",
+          "REQ-104",
+          "REQ-110"
+        ],
+        "affected_paths": [
+          "work-items/WRK-005.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-005.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-005.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-005.md",
+        "classification": "required now"
+      },
+      {
+        "id": "WRK-006",
+        "summary": "Harden the versioned experience and continuity regression suite",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-005"
+        ],
+        "requirements": [
+          "REQ-007",
+          "REQ-008"
+        ],
+        "affected_paths": [
+          "work-items/WRK-006.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-006.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-006.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-006.md",
+        "classification": "deferred until after proof"
+      },
+      {
+        "id": "WRK-007",
+        "summary": "Add measured derived-memory, compaction, and semantic-retrieval mitigations",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-005",
+          "WRK-006"
+        ],
+        "requirements": [
+          "REQ-007",
+          "REQ-008"
+        ],
+        "affected_paths": [
+          "work-items/WRK-007.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-007.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-007.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-007.md",
+        "classification": "deferred until after proof"
+      },
+      {
+        "id": "WRK-008",
+        "summary": "Build authenticated operator service, audit, deletion, retention, and typed correction",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-005"
+        ],
+        "requirements": [
+          "REQ-016",
+          "REQ-017"
+        ],
+        "affected_paths": [
+          "work-items/WRK-008.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-008.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-008.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-008.md",
+        "classification": "deferred until after proof"
+      },
+      {
+        "id": "WRK-009",
+        "summary": "Generalize readiness, observability, and multi-level budgets",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-005"
+        ],
+        "requirements": [
+          "REQ-101",
+          "REQ-103",
+          "REQ-104"
+        ],
+        "affected_paths": [
+          "work-items/WRK-009.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-009.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-009.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-009.md",
+        "classification": "deferred until after proof"
+      },
+      {
+        "id": "WRK-010",
+        "summary": "Add a second character and prove isolation and interaction",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-005",
+          "WRK-006"
+        ],
+        "requirements": [
+          "REQ-012",
+          "REQ-013"
+        ],
+        "affected_paths": [
+          "work-items/WRK-010.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-010.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-010.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-010.md",
+        "classification": "deferred until after proof"
+      },
+      {
+        "id": "WRK-011",
+        "summary": "Scale deliberately to 8-10 characters",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-010",
+          "WRK-009"
+        ],
+        "requirements": [
+          "REQ-012",
+          "REQ-102",
+          "REQ-103"
+        ],
+        "affected_paths": [
+          "work-items/WRK-011.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-011.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-011.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-011.md",
+        "classification": "deferred until after proof"
+      },
+      {
+        "id": "WRK-012",
+        "summary": "Add authoritative item inventory container and transfer workflows",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-005",
+          "WRK-016"
+        ],
+        "requirements": [
+          "REQ-020"
+        ],
+        "affected_paths": [
+          "work-items/WRK-012.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-012.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-012.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-012.md",
+        "classification": "deferred until after proof"
+      },
+      {
+        "id": "WRK-013",
+        "summary": "Define and threat-model LSL-inspired action tags and emotes",
+        "status": "deferred",
+        "source": "Revision 2 delivery recut",
+        "depends_on": [
+          "WRK-005"
+        ],
+        "blocked_by": [
+          "QST-003"
+        ],
+        "requirements": [
+          "REQ-021"
+        ],
+        "affected_paths": [
+          "work-items/WRK-013.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and the package gate in work-items/WRK-013.md"
+        ],
+        "evidence": "Canonical checkpoint listed in work-items/WRK-013.md",
+        "evidence_paths": [],
+        "artifact": "work-items/WRK-013.md",
+        "classification": "speculative future capability"
+      },
+      {
+        "id": "WRK-014",
+        "summary": "Build a second materially different real environment adapter and assess portability",
+        "status": "deferred",
+        "source": "DEC-001 and REQ-107",
+        "depends_on": [
+          "WRK-005"
+        ],
+        "requirements": [
+          "REQ-107"
+        ],
+        "affected_paths": [
+          "work-items/WRK-014.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and package gate in work-items/WRK-014.md"
+        ],
+        "evidence": "Second-adapter conformance and abstraction-revision report",
+        "evidence_paths": [],
+        "classification": "deferred until after proof",
+        "artifact": "work-items/WRK-014.md"
+      },
+      {
+        "id": "WRK-015",
+        "summary": "Add rich beliefs relationships goals plans reflection and scheduling",
+        "status": "deferred",
+        "source": "Deferred cast-depth vision",
+        "depends_on": [
+          "WRK-006",
+          "WRK-010"
+        ],
+        "requirements": [
+          "REQ-013",
+          "REQ-014"
+        ],
+        "affected_paths": [
+          "work-items/WRK-015.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and package gate in work-items/WRK-015.md"
+        ],
+        "evidence": "Independent sourced social/cognitive state suite",
+        "evidence_paths": [],
+        "classification": "deferred until after proof",
+        "artifact": "work-items/WRK-015.md"
+      },
+      {
+        "id": "WRK-016",
+        "summary": "Add exhaustive mutation crash recovery and persistence migration governance",
+        "status": "deferred",
+        "source": "Gate-B operations split from former WRK-008",
+        "depends_on": [
+          "WRK-005",
+          "WRK-008"
+        ],
+        "requirements": [
+          "REQ-017",
+          "REQ-018"
+        ],
+        "affected_paths": [
+          "work-items/WRK-016.md"
+        ],
+        "acceptance_checks": [
+          "Execute every micro-step and package gate in work-items/WRK-016.md"
+        ],
+        "evidence": "Mutation crash matrix and migration governance report",
+        "evidence_paths": [],
+        "classification": "deferred until after proof",
+        "artifact": "work-items/WRK-016.md"
+      }
+    ]
+  },
+  "spikes": [
+    {
+      "id": "SPIKE-000",
+      "summary": "Disposable compatibility and experiential feasibility spike",
+      "status": "required-now",
+      "location_rule": "Use a disposable branch or ./spikes/SPIKE-000; never copy it wholesale into src.",
+      "gates": [
+        "preflight",
+        "exact candidate Node and Java install/verify",
+        "Paper start and Mineflayer authentication/join",
+        "authorized-player presence",
+        "deterministic chat",
+        "position/entities and chunk loading",
+        "basic movement",
+        "pathfinding",
+        "follow, interrupt, and immediate stop",
+        "one simplest-supported structured model decision with one utterance",
+        "disconnect, reconnect, and full restart"
+      ],
+      "retained_artifacts": [
+        "compatibility record with exact versions and primary-source URLs",
+        "commands and dated results",
+        "failures and selected fallbacks",
+        "adapter decisions and a short screen recording/log bundle"
+      ],
+      "stop_condition": "Stop and resolve embodiment or credentials before platform work; a successful join alone is insufficient.",
+      "artifact": "work-items/SPIKE-000.md"
+    }
+  ],
+  "limits": [
+    {
+      "id": "LIM-GA-001",
+      "name": "addressed_chat_outer_slo_ms",
+      "value": 8000,
+      "scope": "Gate A",
+      "meaning": "p95 from accepted stimulus to the one utterance submission attempt"
+    },
+    {
+      "id": "LIM-GA-002",
+      "name": "model_deadline_ms",
+      "value": 6000,
+      "scope": "Gate A",
+      "meaning": "hard ModelPort deadline; leaves an explicit 2000 ms outer-SLO margin"
+    },
+    {
+      "id": "LIM-GA-003",
+      "name": "action_dispatch_deadline_ms",
+      "value": 1000,
+      "scope": "Gate A",
+      "meaning": "maximum from validated proposal to immediate dispatch result"
+    },
+    {
+      "id": "LIM-GA-004",
+      "name": "utterance_submission_deadline_ms",
+      "value": 1000,
+      "scope": "Gate A",
+      "meaning": "maximum for validation plus one environment submission attempt"
+    },
+    {
+      "id": "LIM-GA-005",
+      "name": "follow_re_evaluation_interval_ms",
+      "value": 1000,
+      "scope": "Gate A",
+      "meaning": "deterministic target/hazard/lease recheck while active"
+    },
+    {
+      "id": "LIM-GA-006",
+      "name": "follow_behavior_timeout_ms",
+      "value": 60000,
+      "scope": "Gate A",
+      "meaning": "terminal timeout independent of the cognition run"
+    },
+    {
+      "id": "LIM-GA-007",
+      "name": "priority_control_dispatch_slo_ms",
+      "value": 250,
+      "scope": "Gate A",
+      "meaning": "p95 stop, suspension, shutdown, or emergency-stop dispatch"
+    },
+    {
+      "id": "LIM-GA-008",
+      "name": "cognition_pending_queue_max",
+      "value": 2,
+      "scope": "Gate A",
+      "meaning": "pending runs per agent, excluding the active run"
+    },
+    {
+      "id": "LIM-GA-009",
+      "name": "addressed_chat_coalesce_window_ms",
+      "value": 750,
+      "scope": "Gate A",
+      "meaning": "same-principal messages merge before a run starts"
+    },
+    {
+      "id": "LIM-GA-010",
+      "name": "addressed_chat_trigger_cooldown_ms",
+      "value": 500,
+      "scope": "Gate A",
+      "meaning": "duplicate source events suppress; distinct later messages remain eligible"
+    },
+    {
+      "id": "LIM-GA-011",
+      "name": "perception_radius_blocks",
+      "value": 16,
+      "scope": "Gate A",
+      "meaning": "maximum ordinary nearby entity/player scope"
+    },
+    {
+      "id": "LIM-GA-012",
+      "name": "ordinary_event_soak_minutes",
+      "value": 15,
+      "scope": "Gate A",
+      "meaning": "ambient-noise test duration with no addressed chat"
+    },
+    {
+      "id": "LIM-GA-013",
+      "name": "clean_shutdown_deadline_ms",
+      "value": 10000,
+      "scope": "Gate A",
+      "meaning": "after safety control; unfinished external outcomes become unknown/interrupted"
+    },
+    {
+      "id": "LIM-GA-014",
+      "name": "defining_proof_consecutive_repetitions",
+      "value": 3,
+      "scope": "Gate A",
+      "meaning": "each repetition includes full Paper and runtime stop/restart"
+    },
+    {
+      "id": "LIM-GA-015",
+      "name": "chat_character_max",
+      "value": 240,
+      "scope": "Gate A",
+      "meaning": "validated player-visible utterance length"
+    },
+    {
+      "id": "LIM-GA-016",
+      "name": "model_automatic_retry_max",
+      "value": 0,
+      "scope": "Gate A",
+      "meaning": "a new player stimulus creates a new run; no hidden retry"
+    },
+    {
+      "id": "LIM-GA-017",
+      "name": "automatic_reconnect_attempts_per_incident",
+      "value": 5,
+      "scope": "Gate A",
+      "meaning": "capped backoff 1s, 2s, 5s, 10s, 10s; remain DISCONNECTED after exhaustion"
+    },
+    {
+      "id": "LIM-GA-018",
+      "name": "fts_required_top5_cases",
+      "value": 7,
+      "scope": "Gate A",
+      "meaning": "at least 7 of 8 fixed retrieval fixtures, with zero stale/prohibited top-3 results"
+    }
+  ],
+  "compatibility_policy": {
+    "rule": "Select and pin the newest smoke-tested stable intersection of Paper, Mineflayer, mineflayer-pathfinder, Java, and Node. Falling back to another verified combination requires no architecture review.",
+    "evidence_is_provisional": true,
+    "recheck_when": [
+      "SPIKE-000",
+      "WRK-002",
+      "integration resumes after a pause",
+      "any dependency drifts"
+    ],
+    "record_fields": [
+      "component",
+      "exact_version",
+      "source_url",
+      "retrieved_at",
+      "tested_at",
+      "command",
+      "result",
+      "host_os",
+      "fallback_used"
+    ],
+    "progressive_gates": [
+      "authentication/join",
+      "presence",
+      "chat",
+      "position/entities",
+      "chunk loading/basic movement",
+      "pathfinding",
+      "follow/interrupt/stop",
+      "disconnect/reconnect/restart",
+      "later item/inventory"
+    ],
+    "fallbacks": [
+      "simpler manual movement",
+      "another verified version intersection",
+      "narrow Paper-side observation/wake help"
+    ],
+    "provisional_sources_read_2026_07_17": [
+      {
+        "component": "Paper",
+        "url": "https://docs.papermc.io/paper/getting-started/",
+        "note": "Current Paper and Java requirements; re-read before use."
+      },
+      {
+        "component": "Mineflayer",
+        "url": "https://github.com/PrismarineJS/mineflayer",
+        "note": "Current protocol and Node support claims; re-test every progressive gate."
+      },
+      {
+        "component": "mineflayer-pathfinder",
+        "url": "https://github.com/PrismarineJS/mineflayer-pathfinder",
+        "note": "Follow and stop semantics are client-library behavior, not authoritative proof."
+      },
+      {
+        "component": "Node releases",
+        "url": "https://nodejs.org/en/about/previous-releases",
+        "note": "Use an LTS runtime selected by the smoke test."
+      },
+      {
+        "component": "node:sqlite",
+        "url": "https://nodejs.org/download/release/latest-v24.x/docs/api/sqlite.html",
+        "note": "Release-candidate API observed; suitability remains an empirical WRK-004 gate."
+      },
+      {
+        "component": "OpenAI models",
+        "url": "https://developers.openai.com/api/docs/models",
+        "note": "Choose a currently supported structured-output model in WRK-003; do not bake the alias into core."
+      }
+    ]
+  },
+  "feature_classification": [
+    {
+      "feature": "one named Mineflayer NPC and one authorized principal",
+      "class": "required now"
+    },
+    {
+      "feature": "addressed text chat and bounded perception",
+      "class": "required now"
+    },
+    {
+      "feature": "one structured model decision and one utterance owner",
+      "class": "required now"
+    },
+    {
+      "feature": "asynchronous follow_player and high-priority stop/emergency stop",
+      "class": "required now"
+    },
+    {
+      "feature": "event-grounded encounter persistence, restart, reconciliation, and natural recall",
+      "class": "required now"
+    },
+    {
+      "feature": "simple diagnosis, local backup/restore/reset, shutdown, logs, and evidence collection",
+      "class": "required now"
+    },
+    {
+      "feature": "world, model, store, clock, telemetry, and profile ports with fakes",
+      "class": "architectural seam only"
+    },
+    {
+      "feature": "provider/environment replacement without claimed conformance",
+      "class": "architectural seam only"
+    },
+    {
+      "feature": "local or hosted embeddings port",
+      "class": "architectural seam only"
+    },
+    {
+      "feature": "authenticated operator service, deletion, audit, and correction",
+      "class": "deferred until after proof"
+    },
+    {
+      "feature": "exhaustive mutation crash recovery and migration governance",
+      "class": "deferred until after proof"
+    },
+    {
+      "feature": "rich beliefs, relationships, goals, plans, reflection, and scheduling",
+      "class": "deferred until after proof"
+    },
+    {
+      "feature": "multi-level model/cost budgets and generalized readiness",
+      "class": "deferred until after proof"
+    },
+    {
+      "feature": "item, inventory, container, giving, crafting, building, and combat workflows",
+      "class": "deferred until after proof"
+    },
+    {
+      "feature": "second adapter, portability conformance, two-agent gate, and 8-10 character load",
+      "class": "deferred until after proof"
+    },
+    {
+      "feature": "LSL-inspired action tags and minor-character emotes",
+      "class": "speculative future capability"
+    },
+    {
+      "feature": "voice, observer dashboard, original graphical world, and autonomous civilization",
+      "class": "speculative future capability"
+    }
+  ]
+}

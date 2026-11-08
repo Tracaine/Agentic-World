@@ -1,0 +1,73 @@
+Agentic-World Blueprint Revision 2 — Validation Record
+Review date: 2026-07-17
+
+This file proves blueprint structure and semantic consistency only. It is not
+runtime implementation evidence and does not claim a live Minecraft pass.
+
+STATUS: PASS
+
+1. JSON parse
+
+Command:
+  jq empty architecture/blueprint.json
+
+Result:
+  PASS (exit 0; no output)
+
+2. Strict structural validation
+
+Command:
+  python /root/.codex/skills/remote-skills/skill-6a5a7c0664148191b5fcd9b3c529001c/scripts/blueprint_guard.py validate architecture/blueprint.json --strict
+
+Result:
+  Validation result: 0 error(s), 0 warning(s)
+
+3. Semantic audit
+
+Command:
+  python architecture/tools/semantic_guard.py architecture/blueprint.json
+
+Result:
+  PASS: semantic guard found 0 issues
+
+This includes lifecycle, time-budget, speech ownership, stable identity,
+capability evidence, persistence, compatibility/version records, AgentProfile
+ownership, Gate-A dependency leakage, exact micro-step fields, unresolved task
+placeholders, canonical-limit duplication, and generated-view freshness checks.
+
+4. Generated-view check
+
+Command:
+  python architecture/tools/render_blueprint.py --check
+
+Result:
+  PASS: generated views match blueprint.json
+
+5. Critical-contract banned-token scan
+
+Command:
+  rg 'Record<string, unknown>|normalizedPayload|finalSpeech|kind: "speak"|replacement:' architecture/contracts/platform-contracts.md
+
+Result:
+  PASS: no banned generic or competing speech token in platform contracts
+
+6. Package content inventory
+
+Inventory:
+  15 numbered architecture documents (00 through 14)
+  1 canonical blueprint registry
+  2 contract documents
+  2 decision documents
+  5 generated views/records including this report
+  2 blueprint tools
+  18 work-item documents including SPIKE-000 and the template
+  45 files total
+
+Pre-report content-tree digest command:
+  rg --files -uu | rg -v '^architecture/generated/validation-report\.txt$' | sort | xargs sha256sum | sha256sum
+
+Result for the other 44 files:
+  de939fb4435f5cc48d6242c2f7e9e0f868682bca4e8593643a4c2296fd9627f1
+
+The final ZIP SHA-256 is stored in the sibling .sha256 file. It cannot be
+embedded inside the ZIP without changing the ZIP's own checksum.
